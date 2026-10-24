@@ -244,3 +244,7 @@ dialog.lightbox .close {
 .closing h2 { font-size: clamp(2.2rem, 6vw, 3.6rem); margin-bottom: 1rem; }
 .closing p { margin: 0 auto 0.9em; }
 .closing .sign { font-style: italic; color: var(--ochre); font-size: 1.15rem; }
+
+.site-foot .social a { color: inherit; margin-right: 1rem; }
+.site-foot .social a:last-child { margin-right: 0; }
+.site-foot .social a:hover { color: var(--sindoor); }
