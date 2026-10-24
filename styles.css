@@ -54,14 +54,14 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; ma
 /* ---------- Mithila frame: double line with bharni-style hatching ---------- */
 .frame {
   position: relative;
-  padding: 12px;
-  border: 2px solid var(--indigo);
+  padding: 8px;
+  border: 1.5px solid var(--indigo);
   background:
-    repeating-linear-gradient(-45deg, var(--indigo) 0 1.2px, transparent 1.2px 6px);
+    repeating-linear-gradient(-45deg, var(--indigo) 0 1px, transparent 1px 5px);
 }
 .frame::after { /* inner rule of the double line */
-  content: ""; position: absolute; inset: 9px;
-  border: 1.5px solid var(--indigo); pointer-events: none;
+  content: ""; position: absolute; inset: 6px;
+  border: 1px solid var(--indigo); pointer-events: none;
 }
 .frame img { border: 2px solid var(--limewash); width: 100%; }
 .frame--ochre { border-color: var(--ochre); background: repeating-linear-gradient(-45deg, var(--ochre) 0 1.2px, transparent 1.2px 6px); }
@@ -76,8 +76,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; ma
 }
 @media (min-width: 860px) { .home-hero { grid-template-columns: 1.1fr 1fr; } }
 .home-hero h1 { font-size: clamp(3.4rem, 11vw, 8.5rem); line-height: 0.92; }
-.home-hero h1 span { display: block; }
+.home-hero h1 > span { display: block; }
 .home-hero h1 .amp { color: var(--ochre); }
+.home-hero .lead { color: var(--indigo); font-size: 1.08rem; }
+.home-hero .button { margin-top: 1.75rem; }
 .home-hero p { max-width: 38ch; font-size: 1.15rem; margin: 1.5rem 0 0; color: var(--indigo-soft); }
 .home-hero .tagline { font-size: clamp(1.2rem, 2.4vw, 1.45rem); font-style: italic; }
 .home-hero .frame { max-width: 520px; justify-self: end; width: 100%; }
@@ -190,3 +192,55 @@ dialog.lightbox .close {
 }
 
 .endnote { text-align: center; margin-top: 3rem; font-style: italic; color: var(--indigo-soft); }
+
+/* ---------- Home sections ---------- */
+.button {
+  display: inline-block; background: var(--indigo); color: var(--limewash);
+  padding: 12px 22px; text-decoration: none; font-weight: 600; font-size: 0.98rem;
+}
+.button:hover { background: var(--sindoor); text-decoration: none; }
+
+.home-section { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
+.welcome, .featured, .explore, .beyond, .closing { max-width: 1200px; margin: clamp(72px, 10vw, 128px) auto 0; padding: 0 var(--gutter); }
+
+.welcome { display: grid; gap: clamp(24px, 5vw, 64px); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 820px) { .welcome { grid-template-columns: 320px 1fr; } }
+.welcome img { width: 100%; max-width: 320px; aspect-ratio: 3 / 4; object-fit: cover; }
+.welcome h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+.welcome-text { max-width: var(--measure); }
+.welcome-text p { margin: 0 0 1.1em; }
+
+.featured {
+  display: grid; gap: clamp(24px, 5vw, 56px); grid-template-columns: 1fr; align-items: center;
+  border-top: 2px solid var(--indigo); padding-top: clamp(32px, 5vw, 56px);
+}
+@media (min-width: 820px) { .featured { grid-template-columns: 1fr 1fr; } }
+.featured img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 40%; }
+.featured h2 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.featured .when { color: var(--ochre); margin: 0 0 0.6rem; }
+.featured p { max-width: 48ch; }
+.featured .button { margin-top: 0.75rem; }
+
+.explore h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin-bottom: 1.75rem; }
+.explore-grid { display: grid; gap: 28px 20px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .explore-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .explore-grid { grid-template-columns: repeat(4, 1fr); } }
+.explore-grid a { color: inherit; text-decoration: none; display: block; }
+.explore-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.explore-grid h3 { font-size: 1.45rem; margin: 14px 0 6px; }
+.explore-grid a:hover h3 { color: var(--sindoor); }
+.explore-grid p { margin: 0; font-size: 0.98rem; color: var(--indigo-soft); }
+
+.beyond {
+  background: var(--indigo); color: var(--limewash);
+  max-width: none; padding: clamp(56px, 8vw, 96px) var(--gutter);
+}
+.beyond > * { max-width: 42rem; margin-left: auto; margin-right: auto; }
+.beyond h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); color: var(--ochre); margin-bottom: 1.25rem; }
+.beyond .big { font-family: var(--display); font-size: clamp(1.5rem, 3.6vw, 2.1rem); line-height: 1.25; }
+.beyond p { margin-top: 0; margin-bottom: 1.1em; }
+
+.closing { text-align: center; max-width: var(--measure); }
+.closing h2 { font-size: clamp(2.2rem, 6vw, 3.6rem); margin-bottom: 1rem; }
+.closing p { margin: 0 auto 0.9em; }
+.closing .sign { font-style: italic; color: var(--ochre); font-size: 1.15rem; }
