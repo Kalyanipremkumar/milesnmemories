@@ -1,4 +1,4 @@
-# Miles n Memories
+# Miles & Memories
 
 Personal travel journal at milesnmemories.travel. Plain static HTML and CSS, deployed on Vercel.
 

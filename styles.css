@@ -79,6 +79,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.1; ma
 .home-hero h1 span { display: block; }
 .home-hero h1 .amp { color: var(--ochre); }
 .home-hero p { max-width: 38ch; font-size: 1.15rem; margin: 1.5rem 0 0; color: var(--indigo-soft); }
+.home-hero .tagline { font-size: clamp(1.2rem, 2.4vw, 1.45rem); font-style: italic; }
 .home-hero .frame { max-width: 520px; justify-self: end; width: 100%; }
 
 .stories { max-width: 1200px; margin: clamp(56px, 9vw, 120px) auto 0; padding: 0 var(--gutter); }
