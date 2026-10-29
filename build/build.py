@@ -707,18 +707,16 @@ if STORIES:
 CATS = {
     "/art-heritage/": dict(name="Art &amp; Heritage",
         intro="Traditional paintings, local crafts, museums, architecture and the artists who keep these traditions alive.",
-        desc="Art and heritage from my travels: painted havelis, palace interiors, forts, carved stone and the artists and craftspeople behind them.",
+        desc="Art and heritage from my travels: painted havelis, palace interiors, forts, stepwells and carved stone.",
         story_subjects={"Art & Craft", "Forts & Palaces", "Merchants & Trade", "Science & Astronomy"}, exclude_subjects={"Temples & Faith"},
         sections=[(2, "Amer: grandeur in layers"), (2, "Panna Meena ka Kund: a memory from childhood"), (3, "Why Shekhawati is a painted world"),
-                  (3, "The haveli I wanted to take home"), (4, "Junagarh: the palace of details"), (4, "The Rampuria Havelis"),
-                  (6, "A fort that is also a neighbourhood"), (7, "The fort above the city"), (10, "City Palace and a change of hotel"),
-                  (10, "Shilpgram: buying from the people who make it"), (10, "Meeting miniature-painting artists")]),
+                  (4, "Junagarh: the palace of details"), (4, "The Rampuria Havelis"),
+                  (6, "A fort that is also a neighbourhood"), (7, "The fort above the city"), (10, "City Palace and a change of hotel")]),
     "/temples-traditions/": dict(name="Temples &amp; Traditions",
         intro="Sacred places, their histories, fascinating legends and the experiences that make each visit special.",
-        desc="Temples and traditions from my travels: Pushkar, Ranakpur, Shrinathji at Nathdwara, Eklingji, and folk music and dance in Khuri and Udaipur.",
+        desc="Temples and traditions from my travels: Pushkar's Brahma Temple, Ranakpur Jain Temple, Shrinathji at Nathdwara and Eklingji.",
         story_subjects={"Temples & Faith"}, exclude_subjects=set(),
-        sections=[(4, None), (8, "Ranakpur: marble that seems almost weightless"), (9, "Shrinathji and Eklingji"),
-                  (9, "A full evening in the old city"), (6, "Khuri: the desert after dark"), (5, "Bada Bagh at six")]),
+        sections=[(4, None), (8, "Ranakpur: marble that seems almost weightless"), (9, "Shrinathji and Eklingji")]),
 }
 SECTION_LABELS = {(4, None): "Pushkar: the Brahma Temple and the lake ghats"}
 # Photo for each section card, chosen by hand so it shows that place (None = no photo of it).
