@@ -25,15 +25,105 @@ HOME = read("src/home-original.html")
 ARTICLE = SRC.split("<article>", 1)[1].split("</article>", 1)[0]
 
 # ---------------------------------------------------------------- navigation
-NAV = [("/", "Home"), ("/travel-diaries/", "Travel Diaries"), ("/art-heritage/", "Art &amp; Heritage"),
-       ("/temples-traditions/", "Temples &amp; Traditions"), ("/travel-notes/", "Travel Notes"), ("/stories-behind-the-stones/", "Stories Behind the Stones"),
-       ("/about/", "About"), ("/contact/", "Contact")]
+# Two-level header (Oct 2026). Same URLs as before; dropdowns only group existing pages.
+MENU = [("/", "Home", None),
+        (None, "Travel Diaries", [("/travel-diaries/rajasthan/", "Rajasthan Diaries"), ("/travel-diaries/", "All Destinations"),
+                                  ("/travel-notes/", "Travel Notes")]),
+        (None, "Discover", [("/art-heritage/", "Art &amp; Heritage"), ("/temples-traditions/", "Temples &amp; Traditions"),
+                            ("/stories-behind-the-stones/", "Stories Behind the Stones")]),
+        ("/about/", "About", None), ("/contact/", "Contact", None)]
 
-def header(active):
+def _is_active(item_url, path):
+    if item_url == "/": return path == "/"
+    if item_url == "/travel-diaries/": return path == "/travel-diaries/"
+    return path.startswith(item_url)
+
+SEARCH_SVG = ('<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" '
+              'fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>')
+
+def header(path):
     cur = ' aria-current="page"'
-    links = "".join(f'<a href="{u}"{cur if u == active else ""}>{t}</a>' for u, t in NAV)
-    return (f'<header class="site-head">\n  <a class="wordmark" href="/">Miles &amp; Memories</a>\n'
-            f'  <nav aria-label="Main">{links}</nav>\n</header>\n')
+    items = []
+    for k, (url, label, kids) in enumerate(MENU):
+        if kids is None:
+            items.append(f'<li><a class="mh-link" href="{url}"{cur if _is_active(url, path) else ""}>{label}</a></li>')
+        else:
+            on = any(_is_active(u, path) for u, _ in kids)
+            sub = "".join(f'<li><a href="{u}"{cur if _is_active(u, path) else ""}>{t}</a></li>' for u, t in kids)
+            items.append(f'<li class="mh-dd{" is-active" if on else ""}"><button type="button" class="mh-link mh-dd-btn" aria-expanded="false" '
+                         f'aria-controls="mh-sub-{k}">{label}<span class="mh-caret" aria-hidden="true"></span></button>'
+                         f'<ul class="mh-sub" id="mh-sub-{k}">{sub}</ul></li>')
+    return f"""<a class="skip-link" href="#main">Skip to content</a>
+<header class="mh">
+  <div class="mh-brand">
+    <a class="mh-logo" href="/">Miles <span class="mh-amp">&amp;</span> Memories</a>
+    <p class="mh-tag">Heritage · Culture · Journeys</p>
+  </div>
+  <div class="mh-bar">
+    <a class="mh-logo-sm" href="/">Miles <span class="mh-amp">&amp;</span> Memories</a>
+    <nav class="mh-nav" id="mh-nav" aria-label="Main">
+      <ul class="mh-menu">{"".join(items)}</ul>
+    </nav>
+    <button type="button" class="mh-search-btn" aria-label="Search the journal" aria-haspopup="dialog">{SEARCH_SVG}</button>
+    <button type="button" class="mh-burger" aria-expanded="false" aria-controls="mh-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<dialog class="mh-search" aria-label="Search">
+  <form method="dialog" class="mh-search-form" role="search" onsubmit="return false">
+    <label for="mh-q">Search Miles &amp; Memories</label>
+    <div class="mh-search-row"><input id="mh-q" type="search" autocomplete="off" placeholder="Try Udaipur, frescoes, Mehrangarh…">
+    <button type="button" class="mh-search-close">Close</button></div>
+    <ul class="mh-results" aria-live="polite"></ul>
+  </form>
+</dialog>
+"""
+
+HEADER_JS = """<script>
+(() => {
+  const mh = document.querySelector('.mh'); if (!mh) return;
+  const burger = mh.querySelector('.mh-burger'), nav = mh.querySelector('.mh-nav');
+  const dds = [...mh.querySelectorAll('.mh-dd')];
+  const desktop = () => matchMedia('(min-width: 900px)').matches;
+  const closeAll = except => dds.forEach(d => { if (d !== except) { d.classList.remove('open'); d.querySelector('button').setAttribute('aria-expanded', 'false'); } });
+  dds.forEach(d => {
+    const b = d.querySelector('button');
+    b.addEventListener('click', () => { const o = !d.classList.contains('open'); closeAll(d); d.classList.toggle('open', o); b.setAttribute('aria-expanded', o); });
+    d.addEventListener('mouseenter', () => { if (desktop()) { closeAll(d); d.classList.add('open'); b.setAttribute('aria-expanded', 'true'); } });
+    d.addEventListener('mouseleave', () => { if (desktop()) { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+    d.addEventListener('focusout', e => { if (desktop() && !d.contains(e.relatedTarget)) { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const o = dds.find(d => d.classList.contains('open'));
+    if (o) { closeAll(); o.querySelector('button').focus(); }
+    else if (mh.classList.contains('menu-open')) { mh.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); burger.focus(); }
+  });
+  document.addEventListener('click', e => { if (desktop() && !mh.contains(e.target)) closeAll(); });
+  burger.addEventListener('click', () => { const o = !mh.classList.contains('menu-open'); mh.classList.toggle('menu-open', o); burger.setAttribute('aria-expanded', o); });
+  // search
+  const dlg = document.querySelector('dialog.mh-search'), q = dlg.querySelector('input'), out = dlg.querySelector('.mh-results');
+  let idx = null;
+  const esc = t => t.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const run = () => {
+    const terms = q.value.toLowerCase().split(/\\s+/).filter(Boolean);
+    if (!idx || !terms.length) { out.innerHTML = ''; return; }
+    const score = p => terms.reduce((n, t) => n + (p.t.toLowerCase().includes(t) ? 3 : 0) + (p.d.toLowerCase().includes(t) ? 1 : 0), 0);
+    const hits = idx.filter(p => terms.every(t => p.k.includes(t))).sort((a, b) => score(b) - score(a)).slice(0, 12);
+    out.innerHTML = hits.length ? hits.map(p => '<li><a href="' + p.u + '"><strong>' + esc(p.t) + '</strong><span>' + esc(p.d) + '</span></a></li>').join('')
+                                : '<li class="none">No matching pages yet.</li>';
+  };
+  mh.querySelector('.mh-search-btn').addEventListener('click', () => {
+    dlg.showModal(); q.focus();
+    if (!idx) fetch('/search-index.json').then(r => r.json()).then(j => { idx = j.map(p => ({...p, k: (p.t + ' ' + p.d + ' ' + p.x).toLowerCase()})); run(); }).catch(() => {});
+  });
+  q.addEventListener('input', run);
+  dlg.querySelector('.mh-search-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+"""
+
+SEARCH_INDEX = []
 
 FOOTER = """<footer class="site-foot">
   <span>© 2026 Miles &amp; Memories</span>
@@ -125,9 +215,12 @@ def page(path, *, title, desc, body, active, canonical=True, noindex=False, og_i
 <body id="top">
 """
     head = re.sub(r"\n\n+", "\n", head)
-    out = (head + header(active) + "\n<main>\n" + (DISCLOSURE if disclosure else "") + body + "\n</main>\n\n"
-           + (LIGHTBOX if lightbox else "") + "\n" + FOOTER + SITE_JS + "</body>\n</html>\n")
+    out = (head + header(path) + "\n<main id=\"main\">\n" + (DISCLOSURE if disclosure else "") + body + "\n</main>\n\n"
+           + (LIGHTBOX if lightbox else "") + "\n" + FOOTER + SITE_JS + HEADER_JS + "</body>\n</html>\n")
     out = pictures(out)
+    if not noindex or "/stories-behind-the-stones/" in path:
+        text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", body, flags=re.S))))
+        SEARCH_INDEX.append({"u": path, "t": html.unescape(re.sub(r"\s*\|.*$", "", title)), "d": html.unescape(desc), "x": text[:6000]})
     write(path.strip("/") + "/index.html" if path != "/" else "index.html", out)
     return url
 
@@ -623,4 +716,5 @@ urls = ["/", "/travel-diaries/", COLL] + [d["url"] for d in DAYS] + ["/art-herit
 urls += ([STORIES_PATH] if STORIES and all(m.get("status") == "published" for m in STORIES) else []) + [m["url"] for m in STORIES if m.get("status") == "published"]
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
       + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+write("search-index.json", json.dumps(sorted(SEARCH_INDEX, key=lambda p: p["u"]), ensure_ascii=False))
 print("built", len(urls) + 1, "pages")
