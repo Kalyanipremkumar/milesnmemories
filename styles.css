@@ -379,22 +379,22 @@ mark.added { background: var(--sand); color: var(--sindoor); font-size: 0.78rem;
 /* ---------- Header (two-level, Oct 2026) ---------- */
 .mh {
   --mh-ivory: #F8F5EE; --mh-navy: #182B54; --mh-gold: #C38A24; --mh-terra: #A43B2D; --mh-rule: rgb(24 43 84 / .14);
-  --mh-brand-h: 104px;
+  --mh-brand-h: 76px;
   position: sticky; top: calc(-1 * var(--mh-brand-h)); z-index: 50;
   background: var(--mh-ivory); color: var(--mh-navy); border-bottom: 1px solid var(--mh-rule);
 }
 .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: #182B54; color: #F8F5EE; padding: 8px 14px; }
 .skip-link:focus { left: 8px; }
 .mh-brand { height: var(--mh-brand-h); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid var(--mh-rule); }
-.mh-logo { font-family: var(--display); font-size: clamp(1.9rem, 3vw, 2.4rem); line-height: 1; color: var(--mh-navy); text-decoration: none; letter-spacing: 0.01em; }
+.mh-logo { font-family: var(--display); font-size: clamp(1.6rem, 2.4vw, 1.95rem); line-height: 1; color: var(--mh-navy); text-decoration: none; letter-spacing: 0.01em; }
 .mh-amp { color: var(--mh-gold); }
-.mh-tag { margin: 10px 0 0; font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mh-gold); }
-.mh-bar { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); height: 52px; display: flex; align-items: center; justify-content: center; position: relative; }
+.mh-tag { margin: 6px 0 0; font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--mh-gold); }
+.mh-bar { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); height: 46px; display: flex; align-items: center; justify-content: center; position: relative; }
 .mh-logo-sm, .mh-burger { display: none; }
 .mh-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 4px; }
 .mh-menu > li { position: relative; }
 .mh-link {
-  display: inline-flex; align-items: center; gap: 6px; height: 52px; padding: 0 16px;
+  display: inline-flex; align-items: center; gap: 6px; height: 46px; padding: 0 16px;
   font: 400 0.98rem var(--text); color: var(--mh-navy); text-decoration: none;
   background: none; border: 0; cursor: pointer; letter-spacing: 0.01em;
 }
@@ -419,7 +419,7 @@ mark.added { background: var(--sand); color: var(--sindoor); font-size: 0.78rem;
 @media (max-width: 899px) {
   .mh { --mh-brand-h: 0px; top: 0; }
   .mh-brand { display: none; }
-  .mh-bar { height: 58px; justify-content: space-between; }
+  .mh-bar { height: 54px; justify-content: space-between; }
   .mh-logo-sm { display: block; font-family: var(--display); font-size: 1.35rem; color: var(--mh-navy); text-decoration: none; margin-right: auto; }
   .mh-search-btn { position: static; transform: none; width: 44px; height: 44px; }
   .mh-burger { display: grid; place-content: center; gap: 5px; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; margin-right: -8px; }
@@ -429,7 +429,7 @@ mark.added { background: var(--sand); color: var(--sindoor); font-size: 0.78rem;
   .mh.menu-open .mh-burger span:nth-child(3) { transform: translateY(-6.6px) rotate(-45deg); }
   .mh-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--mh-ivory);
     border-top: 1px solid var(--mh-rule); border-bottom: 1px solid var(--mh-rule); box-shadow: 0 12px 24px rgb(24 43 84 / .10);
-    max-height: calc(100vh - 58px); overflow-y: auto; }
+    max-height: calc(100vh - 54px); overflow-y: auto; }
   .mh.menu-open .mh-nav { display: block; }
   .mh-menu { flex-direction: column; align-items: stretch; gap: 0; padding: 6px var(--gutter) 14px; }
   .mh-menu > li { border-bottom: 1px solid var(--mh-rule); }
@@ -456,4 +456,4 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .mh-results span { display: block; font-size: 0.88rem; color: var(--indigo-soft); }
 .mh-results .none { padding: 10px 4px; color: var(--indigo-soft); }
 /* keep in-page anchors clear of the sticky bar */
-:target, h3[id], h2[id], .day { scroll-margin-top: 72px; }
+:target, h3[id], h2[id], .day { scroll-margin-top: 64px; }
