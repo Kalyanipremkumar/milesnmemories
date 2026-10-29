@@ -24,6 +24,10 @@ SRC = read("src/rajasthan.html")
 HOME = read("src/home-original.html")
 ARTICLE = SRC.split("<article>", 1)[1].split("</article>", 1)[0]
 
+# Draft stories are built (noindex, with a draft banner) only while INCLUDE_DRAFTS is True.
+# Set it to False before publishing the site if any story is still a draft.
+INCLUDE_DRAFTS = False
+
 # ---------------------------------------------------------------- navigation
 # Two-level header (Oct 2026). Same URLs as before; dropdowns only group existing pages.
 MENU = [("/", "Home", None),
@@ -45,6 +49,8 @@ def header(path):
     cur = ' aria-current="page"'
     items = []
     for k, (url, label, kids) in enumerate(MENU):
+        if kids:  # hide Stories Behind the Stones until at least one story is built
+            kids = [(u, t) for u, t in kids if u != "/stories-behind-the-stones/" or STORIES]
         if kids is None:
             items.append(f'<li><a class="mh-link" href="{url}"{cur if _is_active(url, path) else ""}>{label}</a></li>')
         else:
@@ -320,22 +326,6 @@ GLOSSARY = between("<!-- GLOSSARY -->", "<!-- NOTES -->")
 NOTES = between("<!-- NOTES -->", "<!-- PHOTOS -->")
 DISCLAIMER = re.search(r'<p class="note">.*?</p>', INTRO).group(0)
 
-# ---------------------------------------------------------------- complete travelogue
-complete_body = "<article>" + ARTICLE + "</article>\n"
-complete_body = complete_body.replace(
-    '<p class="dek">', f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> '
-    f'<a href="/travel-diaries/">Travel Diaries</a> <span aria-hidden="true">/</span> <a href="{COLL}">Rajasthan</a></nav>\n    <p class="dek">', 1)
-complete_body = complete_body.replace(
-    '<nav class="toc" aria-label="Days">',
-    f'<p class="prose aside">Prefer one day at a time? <a href="{COLL}">Read the diary day by day</a>.</p>\n  <nav class="toc" aria-label="Days">', 1)
-complete_body = complete_body.replace("</article>", '<div class="prose">' + share(COMPLETE, "My Rajasthan Diaries, the complete travelogue") + "</div></article>", 1)
-page(COMPLETE, title="My Rajasthan Diaries: the complete travelogue | Miles &amp; Memories",
-     desc="All eleven days of my October 2026 Rajasthan journey on one page: forts, frescoes, temples, desert skies and stories.",
-     body=complete_body, active="/travel-diaries/", noindex=True, og_type="article", lightbox=True)
-
-# Draft stories are built (noindex, with a draft banner) only while INCLUDE_DRAFTS is True.
-# Set it to False before publishing the site if any story is still a draft.
-INCLUDE_DRAFTS = True
 # ---------------------------------------------------------------- Stories Behind the Stones
 import yaml, markdown
 STORIES_PATH = "/stories-behind-the-stones/"
@@ -370,6 +360,19 @@ ORDER = ["maharana-pratap-and-chetak", "jai-singh-ii-and-jantar-mantar", "amer-a
          "rao-bika-and-bikaner", "rawal-jaisal-and-jaisalmer", "rao-jodha-and-jodhpur", "ranakpur-jain-temple",
          "kumbhalgarh-and-mewar", "eklingji-king-behind-the-kings", "udai-singh-ii-and-udaipur", "shrinathji-and-pichwai"]
 STORIES.sort(key=lambda m: ORDER.index(m["slug"]) if m["slug"] in ORDER else 99)
+# ---------------------------------------------------------------- complete travelogue
+complete_body = "<article>" + ARTICLE + "</article>\n"
+complete_body = complete_body.replace(
+    '<p class="dek">', f'<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> '
+    f'<a href="/travel-diaries/">Travel Diaries</a> <span aria-hidden="true">/</span> <a href="{COLL}">Rajasthan</a></nav>\n    <p class="dek">', 1)
+complete_body = complete_body.replace(
+    '<nav class="toc" aria-label="Days">',
+    f'<p class="prose aside">Prefer one day at a time? <a href="{COLL}">Read the diary day by day</a>.</p>\n  <nav class="toc" aria-label="Days">', 1)
+complete_body = complete_body.replace("</article>", '<div class="prose">' + share(COMPLETE, "My Rajasthan Diaries, the complete travelogue") + "</div></article>", 1)
+page(COMPLETE, title="My Rajasthan Diaries: the complete travelogue | Miles &amp; Memories",
+     desc="All eleven days of my October 2026 Rajasthan journey on one page: forts, frescoes, temples, desert skies and stories.",
+     body=complete_body, active="/travel-diaries/", noindex=True, og_type="article", lightbox=True)
+
 # ---------------------------------------------------------------- day articles
 for i, d in enumerate(DAYS):
     prev_ = DAYS[i - 1] if i else None
