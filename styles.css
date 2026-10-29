@@ -463,3 +463,38 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .mh-brand .mh-tag { margin-top: 7px; }
 .mh-logo-sm img { height: 28px; width: auto; display: block; }
 .cat-block { margin-top: clamp(48px, 7vw, 80px); } .cat-block h2 { font-size: 1.6rem; padding-bottom: .75rem; border-bottom: 2px solid var(--indigo); }
+
+/* ---------- Footer (Oct 2026) ---------- */
+.mf { --mf-navy: #182B54; --mf-gold: #C38A24; margin-top: clamp(64px, 9vw, 104px); background: var(--mf-navy); color: #fff; }
+.mf a { color: #fff; text-decoration: none; }
+.mf a:hover, .mf a:focus-visible { color: #E3B45A; text-decoration: underline; text-underline-offset: 4px; }
+.mf-cols { max-width: 1200px; margin: 0 auto; padding: 48px var(--gutter) 36px; display: grid; gap: 32px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .mf-cols { grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; } }
+.mf-logo { display: inline-block; line-height: 0; }
+.mf-logo img { width: 220px; height: auto; }
+.mf-tag { margin: 12px 0 0; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: #E3B45A; }
+.mf-desc { margin: 14px 0 0; max-width: 34ch; color: rgb(255 255 255 / .82); font-size: 0.97rem; line-height: 1.6; }
+.mf-col h2 { font-family: var(--text); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: #E3B45A;
+  margin: 4px 0 14px; padding-bottom: 10px; border-bottom: 1px solid rgb(195 138 36 / .45); }
+.mf-col ul { list-style: none; margin: 0; padding: 0; }
+.mf-col li { margin: 0 0 9px; font-size: 0.97rem; }
+.mf-social a { display: inline-flex; align-items: center; gap: 10px; }
+.mf-social svg { color: #E3B45A; flex: none; }
+.mf-bottom { border-top: 1px solid rgb(255 255 255 / .14); max-width: 1200px; margin: 0 auto; padding: 16px var(--gutter) 22px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; font-size: 0.85rem; color: rgb(255 255 255 / .72); }
+
+/* ---------- Contact page ---------- */
+.contact-options { max-width: 1200px; margin: 2.5rem auto 0; padding: 0 var(--gutter); display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .contact-options { grid-template-columns: repeat(3, 1fr); } }
+.contact-card { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: center; padding: 20px 22px;
+  border: 1px solid var(--rule); border-top: 3px solid var(--ochre); color: var(--indigo); text-decoration: none; background: rgb(255 255 255 / .4); }
+.contact-card svg { grid-row: span 2; width: 30px; height: 30px; color: var(--ochre); }
+.contact-card .cc-t { font-family: var(--display); font-size: 1.35rem; line-height: 1.2; }
+.contact-card .cc-d { font-size: 0.9rem; color: var(--indigo-soft); }
+.contact-card:hover { border-color: var(--sindoor); color: var(--sindoor); }
+.contact-card.wa { border-top-color: #A43B2D; }
+@media (max-width: 759px) {
+  .mf-cols { grid-template-columns: 1fr 1fr; gap: 28px 20px; padding-top: 36px; padding-bottom: 24px; }
+  .mf-brand { grid-column: 1 / -1; }
+  .mf-col li { margin-bottom: 7px; font-size: 0.93rem; }
+}

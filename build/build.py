@@ -131,11 +131,47 @@ HEADER_JS = """<script>
 
 SEARCH_INDEX = []
 
-FOOTER = """<footer class="site-foot">
-  <span>© 2026 Miles &amp; Memories</span>
-  <span class="foot-links"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/travel-diaries/">Travel Diaries</a></span>
-  <span class="social"><a href="https://www.instagram.com/kalyanidarimisetty/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/kalyani.darimisetty/" rel="me noopener" target="_blank">Facebook</a></span>
-  <span>milesnmemories.travel</span>
+WHATSAPP = "https://wa.me/919980154461"
+INSTAGRAM = "https://www.instagram.com/kalyanidarimisetty/"
+FACEBOOK = "https://www.facebook.com/kalyani.darimisetty/"
+ICONS = {
+    "whatsapp": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2A9.7 9.7 0 0 0 3.7 16.9L2.3 21.7l4.9-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.2-.2-.2-.5-.3Z"/></svg>',
+    "instagram": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>',
+    "facebook": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 21.5v-8h2.7l.4-3.2h-3.1V8.3c0-.9.3-1.5 1.6-1.5h1.6V4a22 22 0 0 0-2.4-.1c-2.4 0-4 1.4-4 4.1v2.3H7.6v3.2h2.7v8h3.2Z"/></svg>',
+    "contact": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.8 7 8.2 6 8.2-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+}
+FOOTER = f"""<footer class="mf">
+  <div class="mf-cols">
+    <div class="mf-brand">
+      <a href="/" class="mf-logo" aria-label="Miles &amp; Memories, home"><img src="/brand/logo-compact-reversed.svg" width="220" height="35" alt="Miles &amp; Memories" loading="lazy"></a>
+      <p class="mf-tag">Heritage · Culture · Journeys</p>
+      <p class="mf-desc">Journeys through places, people and heritage. Stories worth remembering.</p>
+    </div>
+    <nav class="mf-col" aria-label="Explore">
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="/travel-diaries/">Travel Diaries</a></li>
+        <li><a href="/art-heritage/">Art &amp; Heritage</a></li>
+        <li><a href="/temples-traditions/">Temples &amp; Traditions</a></li>
+        <li><a href="/stories-behind-the-stones/">Stories Behind the Stones</a></li>
+        <li><a href="/travel-notes/">Travel Notes</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+    <div class="mf-col">
+      <h2>Connect</h2>
+      <ul class="mf-social">
+        <li><a href="{WHATSAPP}" target="_blank" rel="noopener">{ICONS["whatsapp"]}<span>Chat on WhatsApp</span></a></li>
+        <li><a href="{INSTAGRAM}" target="_blank" rel="me noopener">{ICONS["instagram"]}<span>Instagram</span></a></li>
+        <li><a href="{FACEBOOK}" target="_blank" rel="me noopener">{ICONS["facebook"]}<span>Facebook</span></a></li>
+        <li><a href="/contact/">{ICONS["contact"]}<span>Contact</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mf-bottom">
+    <span>© 2026 Miles &amp; Memories. All rights reserved.</span>
+    <span>milesnmemories.travel</span>
+  </div>
 </footer>
 """
 
@@ -581,9 +617,12 @@ page("/about/", title="About Kalyani | Miles &amp; Memories",
 
 cr, cr_ld = crumbs([("/", "Home"), (None, "Contact")])
 contact_body = (f'<header class="page-head">\n{cr}<h1>Contact</h1>\n'
-                f'<p class="dek">The easiest way to reach me is through Instagram or Facebook.</p>\n</header>\n'
-                f'<div class="prose contact-links"><p><a class="button" href="https://www.instagram.com/kalyanidarimisetty/" rel="me noopener" target="_blank">Instagram</a> '
-                f'<a class="button" href="https://www.facebook.com/kalyani.darimisetty/" rel="me noopener" target="_blank">Facebook</a></p></div>\n')
+                f'<p class="dek">Have a travel story to share, a heritage site to recommend, or a question about one of my journeys? I’d love to hear from you.</p>\n</header>\n'
+                f'<section class="contact-options" aria-label="Ways to get in touch">'
+                f'<a class="contact-card wa" href="{WHATSAPP}" target="_blank" rel="noopener">{ICONS["whatsapp"]}<span class="cc-t">Chat on WhatsApp</span><span class="cc-d">+91 99801 54461</span></a>'
+                f'<a class="contact-card" href="{INSTAGRAM}" target="_blank" rel="me noopener">{ICONS["instagram"]}<span class="cc-t">Instagram</span><span class="cc-d">@kalyanidarimisetty</span></a>'
+                f'<a class="contact-card" href="{FACEBOOK}" target="_blank" rel="me noopener">{ICONS["facebook"]}<span class="cc-t">Facebook</span><span class="cc-d">facebook.com/kalyani.darimisetty</span></a>'
+                f'</section>\n')
 page("/contact/", title="Contact | Miles &amp; Memories",
      desc="How to get in touch with Kalyani at Miles & Memories.", body=contact_body, active="/contact/",
      jsonld=[{"@context": "https://schema.org", "@type": "ContactPage", "url": SITE + "/contact/"}, cr_ld])

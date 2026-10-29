@@ -64,7 +64,7 @@ def union(*bbs):
     return (min(b[0] for b in bbs), min(b[1] for b in bbs), max(b[2] for b in bbs), max(b[3] for b in bbs))
 
 
-def wordmark(size=100, y=0, x=0, amp_scale=1.18, lotus_on=True):
+def wordmark(size=100, y=0, x=0, amp_scale=1.18, lotus_on=True, ink=NAVY, lotus_color=TERRA):
     """'Miles & Memories' on one line. Returns svg fragment, bbox."""
     d1, b1, a1 = BOLD.run("Miles", size, x, y, 0.005)
     gap = size * 0.10
@@ -73,13 +73,13 @@ def wordmark(size=100, y=0, x=0, amp_scale=1.18, lotus_on=True):
     da, ba, aa = ITAL.run("&", amp_size, ax, y + size * 0.02)
     mx = ba[2] + gap
     d2, b2, a2 = BOLD.run("Memories", size, mx, y, 0.005)
-    parts = [f'<path fill="{NAVY}" d="{d1}"/>', f'<path fill="{GOLD}" d="{da}"/>', f'<path fill="{NAVY}" d="{d2}"/>']
+    parts = [f'<path fill="{ink}" d="{d1}"/>', f'<path fill="{GOLD}" d="{da}"/>', f'<path fill="{ink}" d="{d2}"/>']
     bb = union(b1, ba, b2)
     if lotus_on:
         lh = size * 0.38
         lcx = (ba[0] + ba[2]) / 2 + size * 0.06
         base = ba[1] - size * 0.06
-        parts.append(lotus(lcx, base, lh))
+        parts.append(lotus(lcx, base, lh, lotus_color))
         bb = union(bb, (lcx - lh * 0.6, base - lh, lcx + lh * 0.6, base))
     return "".join(parts), bb
 
@@ -133,6 +133,11 @@ save("logo-primary", primary, (600, 1200, 2400))
 cm, cbb = wordmark(100, amp_scale=1.12)
 compact, _, _ = svg(cm, cbb, 4, "Miles &amp; Memories")
 save("logo-compact", compact, (400, 800))
+
+# 2b. Reversed compact logo for dark (navy) backgrounds: ivory letters, gold ampersand and lotus
+rm, rbb = wordmark(100, amp_scale=1.12, ink=IVORY, lotus_color=GOLD)
+reversed_, _, _ = svg(rm, rbb, 4, "Miles &amp; Memories")
+save("logo-compact-reversed", reversed_, (400, 800))
 
 # 3. Monogram: M&M in a gold ring on ivory (favicon, avatars)
 R = 100
