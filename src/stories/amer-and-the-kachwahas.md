@@ -14,15 +14,15 @@ related: [jai-singh-ii-and-jantar-mantar, maharana-pratap-and-chetak, kumbhalgar
 status: draft
 ---
 
-From the road, Amer looks like one building that has been poured over the hill. Its pale walls follow the ridge, its gateways step up the slope, and Maota Lake sits below like a mirror. Above it, on a higher hill, are the heavier walls of Jaigarh. Further along the ridge, looking down on Jaipur, is Nahargarh.
+From the road, Amer looks like one building that has been poured over the hill. Its pale walls follow the ridge, its gateways step up the slope, and Maota Lake sits below like a mirror. Above it stands Jaigarh; along the ridge, Nahargarh overlooks Jaipur.
 
-These three forts tell one family's story over several centuries: the Kachwaha Rajputs. They held this valley, made themselves indispensable to the Mughal emperors, built one of the most refined palaces in Rajasthan, and finally left it for a new city on the plain.
+Together they tell the story of the Kachwaha Rajputs, who held this valley, made themselves indispensable to the Mughal emperors, built one of Rajasthan's most refined palaces, and finally left it for a new city on the plain.
 
 ## Where and when
 
-Amer (also spelled Amber) lies in the hills about 11 kilometres from Jaipur's walled city. Encyclopaedia Britannica says it became the Kachwaha capital in the twelfth century and stayed a political centre for about 600 years. Other accounts place the Kachwaha arrival earlier. The town and its region are older still. Local histories say the area was earlier held by Meena chiefs before Kachwaha princes took it, though the details come largely from later chronicles.
+Amer (also spelled Amber) lies in the hills about 11 kilometres from Jaipur's walled city. Encyclopaedia Britannica says it became the Kachwaha capital in the twelfth century and stayed a political centre for about 600 years. Other accounts place the Kachwaha arrival earlier, and local histories say Meena chiefs held the area before them.
 
-The palace you see today mostly dates from the late sixteenth century onwards. UNESCO says the Rajput forts of this region show Rajput power from the eighth to the eighteenth centuries. In 2013 Amer was inscribed as part of the "Hill Forts of Rajasthan" World Heritage Site, alongside Chittorgarh, Kumbhalgarh, Ranthambore, Gagron and Jaisalmer.
+The palace you see today mostly dates from the late sixteenth century onwards. In 2013 Amer was inscribed as part of the "Hill Forts of Rajasthan" World Heritage Site, alongside Chittorgarh, Kumbhalgarh, Ranthambore, Gagron and Jaisalmer.
 
 ## The people
 
@@ -36,15 +36,15 @@ The palace you see today mostly dates from the late sixteenth century onwards. U
 
 ## What happened
 
-The 1562 alliance turned Amer's rulers into Mughal nobles. In return for loyalty and military service, they gained rank, wealth and a major role at court. Man Singh's career shows how much that meant. A recent review of Rima Hooja's biography credits him with dozens of campaigns, from Kabul in the north-west to Bihar, Bengal and Odisha in the east. He also commanded the Mughal army against Maharana Pratap of Mewar at the Battle of Haldighati in 1576. That makes him a hero in some tellings and a villain in others.
+The 1562 alliance turned Amer's rulers into Mughal nobles. In return for loyalty and military service, they gained rank, wealth and a major role at court. A review of Rima Hooja's biography of Man Singh credits him with dozens of campaigns, from Kabul to Bengal and Odisha. He also commanded the Mughal army against Maharana Pratap of Mewar at the Battle of Haldighati in 1576.
 
-Building at Amer followed that wealth. Man Singh's palace is usually dated to the 1590s. Britannica dates the start of the main palace to around 1600. UNESCO singles out the buildings and gardens added by Mirza Raja Jai Singh I as a key seventeenth-century phase in a shared Rajput–Mughal court style. You can see that blend as you climb. The Diwan-i-Aam (hall of public audience) has rows of columns. Ganesh Pol is the painted gateway into the private palaces. The Jai Mandir, better known as the Sheesh Mahal, has walls and ceilings set with mirror mosaic and coloured glass, so that one lamp can light up the whole room. Gardens and water channels cooled the private apartments, and Maota Lake below was the palace's water source.
+Building at Amer followed that wealth. Man Singh's palace is usually dated to the 1590s. Britannica dates the start of the main palace to around 1600. UNESCO singles out the buildings and gardens added by Mirza Raja Jai Singh I as a key seventeenth-century phase in a shared Rajput–Mughal court style. You see it as you climb: the columned Diwan-i-Aam (hall of public audience), then Ganesh Pol, the painted gateway into the private palaces. The Jai Mandir, better known as the Sheesh Mahal, has walls and ceilings set with mirror mosaic and coloured glass, so that one lamp can light up the whole room. Maota Lake below was the palace's water source.
 
 Jai Singh I's career shows both the peaks and the risks of Mughal service. In 1665 he besieged Purandar in the Deccan and forced Shivaji to sign the Treaty of Purandar. A campaign against Bijapur then failed. He lost favour and died at Burhanpur in 1667 on his way back to court.
 
-Above the palace, Jaigarh guarded the hill. The Ministry of Tourism's site says Sawai Jai Singh II began building it in 1726 as a defensive bastion for Amer, roughly 400 metres higher up. The giant Jaivana cannon there is usually dated to 1720. Other histories say the hilltop was fortified much earlier and that Jai Singh II rebuilt and enlarged it. Underground passages are said to link the two forts, which were treated as one complex.
+Above the palace, Jaigarh guarded the hill. The Ministry of Tourism's site says Sawai Jai Singh II began building it in 1726 as a defensive bastion for Amer, roughly 400 metres higher up. The giant Jaivana cannon there is usually dated to 1720. Other histories say the hilltop was fortified much earlier and that Jai Singh II rebuilt and enlarged it.
 
-Then the family left. In the late 1720s Jai Singh II laid out Jaipur on the plain below. Common explanations are that Amer, squeezed between hills, had too little room for a growing population and too little water. In 1734 he completed Nahargarh, on the ridge above the new city, as a retreat that also helped defend it. Britannica dates the transfer of the court to 1728, and other sources give 1727. Amer was never abandoned as a sacred and ceremonial place, but it was no longer the capital.
+Then the family left. In the late 1720s Jai Singh II laid out Jaipur on the plain below. Common explanations are that Amer, squeezed between hills, had too little room for a growing population and too little water. In 1734 he completed Nahargarh, on the ridge above the new city, as a retreat that also helped defend it. Britannica dates the transfer of the court to 1728, and other sources give 1727.
 
 ## Legends and debates
 
@@ -54,8 +54,6 @@ Then the family left. In the late 1720s Jai Singh II laid out Jaipur on the plai
 
 **Who built what?** Attributions inside the palace vary. Some sources credit Man Singh with starting the Sheesh Mahal, while others link it mainly to Jai Singh I, with work continuing into the eighteenth century. A Rajasthan Archaeology Department plaque, as reported online, attributes Ganesh Pol to Mirza Raja Jai Singh, but some guides credit Jai Singh II. Even the founding of Jaigarh is dated to the eleventh century by some and to 1726 by others.
 
-**Hidden treasure.** Rumours that Kachwaha treasure lay hidden at Jaigarh led to an official search in the mid-1970s. Nothing was found.
-
 ## Wisdom to carry forward
 
 Amer is often described in terms of glory, but its real story is about trade-offs. Bharmal's alliance protected his kingdom and made his descendants powerful, at the cost of tying them to an emperor's wars. Haldighati, Purandar and Bijapur all followed from that choice.
@@ -64,9 +62,9 @@ When you stand in the Sheesh Mahal, you are looking at what that bargain paid fo
 
 ## My connection
 
-Our second day in Jaipur was for its hill forts. At Amer, I wrote, the courtyards lead from public spaces into increasingly private royal areas, and Ganesh Pol rewards a closer look. Sheesh Mahal "shows how reflective surfaces can transform a room with light." I found myself thinking not only about the kings and queens who lived there but "about the artists and craftspeople who spent so much time on each detail." I also noticed that Rajput traditions, Mughal influences, responses to heat and the demands of court life all appear in different parts of the complex.
+Our second day in Jaipur was for its hill forts. At Amer, I wrote, the courtyards lead from public spaces into increasingly private royal areas, and Ganesh Pol rewards a closer look. Sheesh Mahal "shows how reflective surfaces can transform a room with light." I found myself thinking not only about the kings and queens who lived there but "about the artists and craftspeople who spent so much time on each detail."
 
-Jaigarh, with its ramparts and the Jaivana cannon, felt quite different from the decorated chambers below: "A fort built for protection has its own kind of beauty." Nahargarh completed our circuit, and from there the planned city became easier to appreciate as a whole. Each fort had a different personality, and together they made the day memorable.
+Jaigarh, with its ramparts and the Jaivana cannon, felt quite different from the decorated chambers below: "A fort built for protection has its own kind of beauty." Nahargarh completed our circuit, and from there the planned city became easier to appreciate as a whole.
 
 ## Sources
 
@@ -89,6 +87,6 @@ Jaigarh, with its ramparts and the Jaivana cannon, felt quite different from the
 - **Dates that vary:** when the Kachwahas made Amer their capital (Britannica: 12th century; other sources: 10th–11th), the start of Man Singh's palace (1592 / c. 1600), the capital's move (1727 / 1728) and Jaigarh's founding (11th century / 1726).
 - **Sheesh Mahal and Ganesh Pol attributions** are genuinely muddled online. I could not reach the Amer Development & Management Authority's own site.
 - **The Haldighati "dinner" story:** I only found a well-argued but anonymous Substack essay that collects historians' views (Sarkar, G. N. Sharma) against it, so I did not cite it. The text calls the story a legend. You may want a stronger citation, or you could cross-link to the Maharana Pratap story instead.
-- **The treasure search** is sourced only to Wikipedia, which cites Lok Sabha debates from 1977. It is kept to one line, and you can cut it.
+- I cut the 1970s Jaigarh treasure-search story for length. It is in Wikipedia, which cites Lok Sabha debates from 1977, if you want it back.
 - **Photos:** jp17 (Amer above Maota Lake) as hero; jp15 (looking down to Maota and Kesar Kyari), jp22 (you above the Sheesh Mahal courtyard) and jp26 (sunset from Nahargarh). I left out jp24, jp13, jp14 and jp27 because their descriptions don't say which fort they show. I left out jp25, jp28 and jp10–12, which look like contemporary art at Nahargarh's Madhavendra Bhawan rather than Kachwaha history. The stepwell photos (jp21, r13) also stay out, since Panna Meena ka Kund isn't covered in this story.
 - I did not include the Sirivennela stepwell memory, because it isn't about the Kachwahas.

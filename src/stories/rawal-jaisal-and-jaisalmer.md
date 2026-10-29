@@ -16,7 +16,7 @@ status: draft
 
 Most of Rajasthan's great forts are now museums. You buy a ticket, walk through empty courtyards and imagine the people who once lived there. Jaisalmer is different. Inside its yellow sandstone walls people still cook, pray, run shops and hang out washing. UNESCO describes it as a township "still inhabited today."
 
-The fort is named after the man who chose the hill: Rawal Jaisal, a prince of the Bhati Rajputs. His decision in the twelfth century explains a great deal about the city that grew up below it, from the way its walls catch the evening light to the merchant mansions that later filled its lanes.
+The fort is named after the man who chose the hill: Rawal Jaisal, a prince of the Bhati Rajputs.
 
 ## Where and when
 
@@ -24,35 +24,35 @@ Jaisalmer stands deep in the Thar Desert, in the far west of Rajasthan. Encyclop
 
 Before Jaisalmer, the Bhatis ruled from Lodurva (also spelled Lodhruva), roughly 15 km away. Accounts say Lodurva had been sacked in the mid-twelfth century, and Jaisal moved the capital to a site that was easier to defend.
 
-The desert was not empty. Britannica describes Jaisalmer as a major caravan centre, and for centuries its rulers earned a great deal by taxing the camel trains that crossed the Thar between northern India, Central Asia and the ports of Gujarat. That trade paid for much of what visitors admire today. When sea trade through Bombay grew in the nineteenth century, the caravans dwindled and Jaisalmer's fortunes declined.
+Britannica describes Jaisalmer as a major caravan centre. Its wealth came largely from levies on camel trains crossing the Thar towards the ports of Gujarat. When sea trade through Bombay grew, the caravans dwindled and Jaisalmer declined.
 
 ## The people
 
-**Rawal Jaisal** was a Bhati Rajput ruler. The Bhatis claim descent from the Yadu clan, the lineage of Krishna, and Jaisalmer's rulers used the title *Rawal*, later *Maharawal*. Wikipedia's account says Jaisal was passed over for the throne of Lodurva in favour of a younger half-brother. I could not confirm this from a stronger source, so treat it with caution.
+**Rawal Jaisal** was a Bhati Rajput ruler. The Bhatis claim descent from the Yadu clan, the lineage of Krishna, and Jaisalmer's rulers used the title *Rawal*, later *Maharawal*. One account says he was passed over for the throne of Lodurva in favour of a younger half-brother, though I could not confirm this from a stronger source.
 
 **Jait Singh II** and his son **Lunkaran** were sixteenth-century rulers of Jaisalmer, linked to the dam, garden and first cenotaph at Bada Bagh.
 
-**Guman Chand Patwa** was a wealthy merchant who, in the early nineteenth century, began the cluster of five mansions known as Patwon ki Haveli. His first name appears as Guman Singh in some sources.
+**Guman Chand Patwa** (Guman Singh in some sources) was the merchant who began the five mansions of Patwon ki Haveli.
 
-**Diwan Mohata Nathmal** was prime minister of the Jaisalmer state. Nathmal ki Haveli, completed in 1885, was built as his residence on the orders of Maharawal Beri Sal.
+**Diwan Mohata Nathmal** was the state's prime minister. Maharawal Beri Sal commissioned Nathmal ki Haveli as his residence.
 
 ## What happened
 
 Jaisal's first fort was reportedly built of mud, and it was rebuilt and enlarged in stone over the following centuries. What survives is a dense hilltop town of palaces, houses, wells and temples, ringed by walls and bastions. Seven Jain temples, built in yellow sandstone between the twelfth and sixteenth centuries, stand inside, alongside Hindu temples such as the Laxminath temple. UNESCO highlights this mix, calling Jaisalmer an important example of a fort that is both sacred and urban.
 
-Its history was not peaceful. Jaisalmer was besieged by the armies of the Delhi Sultanate, most famously under Alauddin Khalji in the late thirteenth century. Local tradition records episodes of *jauhar*, in which women of the fort chose death by fire rather than capture, followed by a last charge by the men. The exact dates and numbers vary from one account to the next.
+Its history was not peaceful. Jaisalmer was besieged by Delhi Sultanate armies, most famously under Alauddin Khalji in the late thirteenth century. Tradition records episodes of *jauhar*, in which the fort's women chose death by fire rather than capture. Dates and numbers vary between accounts.
 
-Later centuries brought calmer, wealthier times. Outside the walls, in the sixteenth century, Jait Singh II built a dam to create a reservoir. His son Lunkaran laid out a garden beside it and raised a memorial *chhatri* on the hill above. This became Bada Bagh, the "big garden". Later rulers added their own cenotaphs over the following centuries. The last, intended for Maharawal Jawahir Singh in the twentieth century, was left unfinished after Indian independence.
+In the sixteenth century, outside the walls, Jait Singh II built a dam to create a reservoir. His son Lunkaran laid out a garden beside it and raised a memorial *chhatri* on the hill above. This became Bada Bagh, the "big garden", where later rulers added their own cenotaphs. The last, intended for Maharawal Jawahir Singh, was left unfinished after Indian independence.
 
-In the town below the fort, merchants turned their profits into stone. Patwon ki Haveli was planned from about 1805 and took decades to complete. Nathmal ki Haveli followed in 1885. Their facades of projecting balconies, screens and carved brackets show the Jaisalmer stoneworkers' skill. The main Patwa mansion, Kothari's Patwa Haveli, is now a museum.
+In the town below, merchants turned profits into stone. Patwon ki Haveli was planned from about 1805 and took decades to finish. Nathmal ki Haveli followed in 1885. The main Patwa mansion, Kothari's Patwa Haveli, is now a museum.
 
-In 2013 the World Heritage Committee, meeting in Phnom Penh, inscribed six forts as the Hill Forts of Rajasthan: Chittorgarh, Kumbhalgarh, Ranthambore, Gagron, Amber and Jaisalmer. The same decision warned that the hill under Jaisalmer was vulnerable to water seepage and that buildings inside the fort needed better conservation. The people who keep the fort alive also strain it. More water now flows in than the old desert structures were ever built to handle.
+In 2013 the World Heritage Committee, meeting in Phnom Penh, inscribed six forts as the Hill Forts of Rajasthan: Chittorgarh, Kumbhalgarh, Ranthambore, Gagron, Amber and Jaisalmer. The same decision warned that the hill under Jaisalmer was vulnerable to water seepage and that buildings inside the fort needed better conservation. The people who keep the fort alive also strain it.
 
 ## Legends and debates
 
 **The sage on Trikuta.** According to legend, when Jaisal came to the hill he met a sage, usually named Eesul. The sage told him that Krishna had prophesied a descendant of the Yadu clan would one day found a kingdom here. Tradition also credits the sage with a darker prediction: that the fort would be sacked "two and a half" times. Local storytellers link this to the three *jauhar* episodes, one of them counted as a "half". These are cherished traditions, not documented events.
 
-**The 1156 date.** Britannica and most official sources give 1156, and it is the date almost everyone uses. Some details around it, such as when Lodurva was sacked and by whom, are reported inconsistently, with dates ranging from 1152 to 1178.
+**The 1156 date.** Britannica and most official sources give 1156. Surrounding details, such as when Lodurva was sacked, are reported inconsistently (1152 to 1178).
 
 **How many people live in the fort?** Figures range from about 2,000 to about 4,000 depending on the source and year. "A few thousand" is the honest answer.
 
