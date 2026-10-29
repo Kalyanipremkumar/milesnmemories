@@ -462,3 +462,4 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .mh-logo img { height: 42px; width: auto; }
 .mh-brand .mh-tag { margin-top: 7px; }
 .mh-logo-sm img { height: 28px; width: auto; display: block; }
+.cat-block { margin-top: clamp(48px, 7vw, 80px); } .cat-block h2 { font-size: 1.6rem; padding-bottom: .75rem; border-bottom: 2px solid var(--indigo); }

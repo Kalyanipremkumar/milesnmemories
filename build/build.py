@@ -539,21 +539,6 @@ page("/travel-diaries/", title="Travel Diaries | Miles &amp; Memories",
 
 # ---------------------------------------------------------------- category pages
 # Intros reuse the wording already on the homepage cards. Day lists are tags chosen from the diary text.
-CATS = {
-    "/art-heritage/": ("Art &amp; Heritage", "Traditional paintings, local crafts, museums, architecture and the artists who keep these traditions alive.",
-                       [1, 2, 3, 4, 6, 7, 10], "Art and heritage stories: frescoes, carved havelis, palace interiors, crafts and the artists behind them, from my Rajasthan travel diaries."),
-    "/temples-traditions/": ("Temples &amp; Traditions", "Sacred places, their histories, fascinating legends and the experiences that make each visit special.",
-                             [4, 8, 9], "Temples and traditions from my travels: Pushkar's Brahma Temple, Ranakpur, Shrinathji, Eklingji, Jagdish Temple and folk performance in Udaipur."),
-}
-for path, (name, intro, days, desc) in CATS.items():
-    cr, cr_ld = crumbs([("/", "Home"), (None, name)])
-    body = (f'<header class="page-head">\n{cr}<h1>{name}</h1>\n<p class="dek">{intro}</p>\n</header>\n'
-            f'<section class="stories">\n<h2>From the Rajasthan diaries</h2>\n'
-            + "".join(day_card(DAYS[n - 1]) for n in days) + "</section>\n")
-    page(path, title=f"{name} | Miles &amp; Memories", desc=desc, body=body, active=path,
-         jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": strip_tags(name), "url": SITE + path,
-                  "hasPart": [{"@type": "BlogPosting", "headline": f'Day {n} — {DAYS[n-1]["title"]}', "url": SITE + DAYS[n-1]["url"]} for n in days]}, cr_ld])
-
 # Travel guides
 GUIDE = "/travel-notes/rajasthan-practical-notes/"
 cr, cr_ld = crumbs([("/", "Home"), (None, "Travel Notes")])
@@ -715,6 +700,69 @@ if STORIES:
          desc="History, legends and timeless wisdom from the places I’ve visited: the founders, rulers, artisans and traditions behind Rajasthan’s forts, temples and havelis.",
          body=sbs_body, active=STORIES_PATH, noindex=any(m.get("status") != "published" for m in STORIES),
          jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Stories Behind the Stones", "url": SITE + STORIES_PATH}, cr_ld])
+
+# ---------------------------------------------------------------- category pages
+# Each category gathers (1) Stories Behind the Stones on its subjects and (2) the specific diary sections on its theme,
+# linked to their place in the chapter. Section choices are from the diary's own sub-headings.
+CATS = {
+    "/art-heritage/": dict(name="Art &amp; Heritage",
+        intro="Traditional paintings, local crafts, museums, architecture and the artists who keep these traditions alive.",
+        desc="Art and heritage from my travels: painted havelis, palace interiors, forts, carved stone and the artists and craftspeople behind them.",
+        story_subjects={"Art & Craft", "Forts & Palaces", "Merchants & Trade", "Science & Astronomy"}, exclude_subjects={"Temples & Faith"},
+        sections=[(2, "Amer: grandeur in layers"), (2, "Panna Meena ka Kund: a memory from childhood"), (3, "Why Shekhawati is a painted world"),
+                  (3, "The haveli I wanted to take home"), (4, "Junagarh: the palace of details"), (4, "The Rampuria Havelis"),
+                  (6, "A fort that is also a neighbourhood"), (7, "The fort above the city"), (10, "City Palace and a change of hotel"),
+                  (10, "Shilpgram: buying from the people who make it"), (10, "Meeting miniature-painting artists")]),
+    "/temples-traditions/": dict(name="Temples &amp; Traditions",
+        intro="Sacred places, their histories, fascinating legends and the experiences that make each visit special.",
+        desc="Temples and traditions from my travels: Pushkar, Ranakpur, Shrinathji at Nathdwara, Eklingji, and folk music and dance in Khuri and Udaipur.",
+        story_subjects={"Temples & Faith"}, exclude_subjects=set(),
+        sections=[(4, None), (8, "Ranakpur: marble that seems almost weightless"), (9, "Shrinathji and Eklingji"),
+                  (9, "A full evening in the old city"), (6, "Khuri: the desert after dark"), (5, "Bada Bagh at six")]),
+}
+SECTION_LABELS = {(4, None): "Pushkar: the Brahma Temple and the lake ghats"}
+# Photo for each section card, chosen by hand so it shows that place (None = no photo of it).
+SECTION_PHOTOS = {(2, "Amer: grandeur in layers"): "jp22", (2, "Panna Meena ka Kund: a memory from childhood"): "jp21",
+    (3, "Why Shekhawati is a painted world"): "r06", (3, "The haveli I wanted to take home"): "r04",
+    (4, "Junagarh: the palace of details"): "jg09", (4, "The Rampuria Havelis"): "b02",
+    (6, "A fort that is also a neighbourhood"): "js03", (7, "The fort above the city"): "j08",
+    (10, "City Palace and a change of hotel"): "cp02", (10, "Shilpgram: buying from the people who make it"): "s02",
+    (4, None): "p02", (8, "Ranakpur: marble that seems almost weightless"): "n02",
+    (9, "A full evening in the old city"): "ue01", (6, "Khuri: the desert after dark"): "k04", (5, "Bada Bagh at six"): "bb02"}
+
+def h3_anchor(t): return re.sub(r"[^a-z0-9]+", "-", strip_tags(t).lower()).strip("-")
+
+def section_card(n, h3):
+    d = DAYS[n - 1]; chunk = d["chunk"]
+    if h3:
+        assert f"<h3>{h3}</h3>" in chunk, h3
+        after = chunk.split(f"<h3>{h3}</h3>", 1)[1]
+        url = d["url"] + "#" + h3_anchor(h3); label = h3
+        first_p = re.search(r"<p>(.*?)</p>", after, re.S).group(1)
+    else:
+        after = chunk; url = d["url"]; label = SECTION_LABELS[(n, h3)]
+        first_p = re.search(r"<p>(.*?)</p>", chunk, re.S).group(1)
+    pid = SECTION_PHOTOS.get((n, h3))
+    if pid:
+        alt = re.search(r'data-full="%s" aria-label="View larger: ([^"]*)"' % pid, SRC) or re.search(r'/images/rajasthan/%s(?:-sm)?\.jpg"[^>]*alt="([^"]*)"' % pid, SRC)
+        img = thumb(pid, alt.group(1))
+    else:
+        img = '<div class="card-noimg" aria-hidden="true"></div>' 
+    excerpt = strip_tags(first_p); excerpt = excerpt if len(excerpt) < 170 else excerpt[:excerpt.rfind(" ", 0, 165)] + "…"
+    return (f'<a class="sbs-card" href="{url}">{img}<div><p class="when">Day {n} — {d["title"]}</p>'
+            f'<h3>{label}</h3><p>{html.escape(excerpt)}</p></div></a>\n')
+
+for path, c in CATS.items():
+    cr, cr_ld = crumbs([("/", "Home"), (None, c["name"])])
+    sts = [m for m in STORIES if set(m.get("subjects", [])) & c["story_subjects"] and not set(m.get("subjects", [])) & c["exclude_subjects"]]
+    body = f'<header class="page-head">\n{cr}<h1>{c["name"]}</h1>\n<p class="dek">{c["intro"]}</p>\n</header>\n'
+    body += ('<section class="stories cat-block"><h2>From my travel diaries</h2><div class="sbs-grid">'
+             + "".join(section_card(n, h) for n, h in c["sections"]) + "</div></section>\n")
+    if sts:
+        body += ('<section class="stories cat-block"><h2>Stories Behind the Stones</h2><div class="sbs-grid">'
+                 + "".join(story_card(m) for m in sts) + f'</div><p><a href="{STORIES_PATH}">All Stories Behind the Stones →</a></p></section>\n')
+    page(path, title=f'{c["name"]} | Miles &amp; Memories', desc=c["desc"], body=body, active=path,
+         jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": strip_tags(c["name"]), "url": SITE + path}, cr_ld])
 
 # ---------------------------------------------------------------- sitemap
 urls = ["/", "/travel-diaries/", COLL] + [d["url"] for d in DAYS] + ["/art-heritage/", "/temples-traditions/",
