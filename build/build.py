@@ -246,13 +246,26 @@ INCLUDE_DRAFTS = True
 # ---------------------------------------------------------------- Stories Behind the Stones
 import yaml, markdown
 STORIES_PATH = "/stories-behind-the-stones/"
+def parse_fm(fm):
+    """Simple front matter: 'key: value' lines; [a, b] lists. Tolerates colons inside titles."""
+    meta = {}
+    for line in fm.strip().splitlines():
+        if ":" not in line: continue
+        k, v = line.split(":", 1); v = v.strip()
+        if v.startswith("[") and v.endswith("]"):
+            meta[k.strip()] = [x.strip().strip("'\"") for x in v[1:-1].split(",") if x.strip()]
+        else:
+            meta[k.strip()] = v.strip("'\"")
+    return meta
 STORIES = []
 sdir = os.path.join(ROOT, "src/stories")
 for fn in sorted(os.listdir(sdir)) if os.path.isdir(sdir) else []:
     if not fn.endswith(".md"): continue
     raw = read("src/stories/" + fn)
     _, fm, body_md = raw.split("---", 2)
-    meta = yaml.safe_load(fm)
+    meta = parse_fm(fm)
+    if not meta.get("slug") or not meta.get("diary"):
+        print("skipping incomplete story", fn); continue
     body_md = body_md.split("## Notes for Kalyani", 1)[0]        # editor notes are never published
     meta["body_md"] = body_md
     meta["url"] = STORIES_PATH + meta["slug"] + "/"
