@@ -343,12 +343,76 @@ def route_map():
     out.append("</svg>")
     return ('<figure class="route-figure wide">' + "".join(out) +
             '<figcaption>Our route, drawn from approximate town locations. Not to scale for driving.</figcaption></figure>\n')
+# Interactive road-trip map (Leaflet, self-hosted; OpenStreetMap tiles; road route from the OSRM demo server,
+# requested in the visitor's browser and cached. If routing fails, stops are joined by dashed straight lines
+# and the note says so, so straight lines are never presented as roads.)
+TRIP = [("Jaipur", 26.9124, 75.7873, "Days 1–2", [1, 2]), ("Mandawa", 28.0552, 75.1484, "Day 3", [3]),
+        ("Pushkar", 26.4878, 74.5546, "Days 3–4", [3, 4]), ("Bikaner", 28.0229, 73.3119, "Day 4", [4]),
+        ("Jaisalmer", 26.9157, 70.9083, "Days 5–6", [5, 6]), ("Khuri Desert", 26.6045, 70.7120, "Day 6", [6]),
+        ("Jodhpur", 26.2389, 73.0243, "Day 7", [7]), ("Ranakpur", 25.1162, 73.4727, "Day 8", [8]),
+        ("Kumbhalgarh", 25.1528, 73.5870, "Day 8", [8]), ("Nathdwara", 24.9381, 73.8228, "Day 9", [9]),
+        ("Eklingji Temple, Kailashpuri", 24.7472, 73.7233, "Day 9", [9]), ("Udaipur", 24.5854, 73.7125, "Days 9–11", [9, 10, 11])]
+def trip_map():
+    stops = [{"name": n, "lat": la, "lng": lo, "days": dl,
+              "links": [{"t": f"Day {k} — {DAYS[k-1]['title']}", "u": DAYS[k-1]["url"]} for k in ks]} for n, la, lo, dl, ks in TRIP]
+    items = "".join(f'<li><span class="num">{i+1}</span> {n} <span class="d">· {dl}</span></li>' for i, (n, la, lo, dl, ks) in enumerate(TRIP))
+    return f"""<section class="trip" aria-labelledby="trip-h">
+  <h2 id="trip-h">My Rajasthan Diaries — 11-Day Road Trip</h2>
+  <p class="when">10–20 October 2026</p>
+  <div id="trip-map" role="region" aria-label="Interactive map of our route through Rajasthan"></div>
+  <p class="trip-note" id="trip-note">Route shown for illustration; actual driving roads may vary.</p>
+  <ol class="trip-stops">{items}</ol>
+</section>
+<link rel="stylesheet" href="/vendor/leaflet-1.9.4/leaflet.css">
+<script src="/vendor/leaflet-1.9.4/leaflet.js"></script>
+<script>
+(() => {{
+  const stops = {json.dumps(stops, ensure_ascii=False)};
+  const css = getComputedStyle(document.documentElement);
+  const navy = css.getPropertyValue('--indigo').trim() || '#1e2552';
+  const mustard = css.getPropertyValue('--ochre').trim() || '#c98a12';
+  const terracotta = css.getPropertyValue('--sindoor').trim() || '#a8232b';
+  const map = L.map('trip-map', {{ scrollWheelZoom: false, zoomControl: true }});
+  L.tileLayer('https://tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+    maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }}).addTo(map);
+  const pts = stops.map(s => [s.lat, s.lng]);
+  map.fitBounds(pts, {{ padding: [28, 28] }});
+  stops.forEach((s, i) => {{
+    const icon = L.divIcon({{ className: 'trip-pin', html: '<span>' + (i + 1) + '</span>', iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -12] }});
+    const links = s.links.map(l => '<a href="' + l.u + '">' + l.t + '</a>').join('<br>');
+    L.marker([s.lat, s.lng], {{ icon, title: s.name, keyboard: true }}).addTo(map)
+      .bindPopup('<strong>' + (i + 1) + '. ' + s.name + '</strong><br><em>' + s.days + '</em><br>' + links);
+  }});
+  const draw = coords => {{
+    L.polyline(coords, {{ color: navy, weight: 7, opacity: 0.35 }}).addTo(map);
+    L.polyline(coords, {{ color: terracotta, weight: 3.5, opacity: 0.95 }}).addTo(map);
+  }};
+  const fallback = () => {{
+    L.polyline(pts, {{ color: mustard, weight: 3, dashArray: '4 8', opacity: 0.9 }}).addTo(map);
+    document.getElementById('trip-note').textContent = 'The road route could not be loaded just now, so dashed lines simply connect the stops in order. They are not roads.';
+  }};
+  const key = 'mm-rajasthan-route-v1';
+  let cached = null;
+  try {{ cached = JSON.parse(localStorage.getItem(key)); }} catch (e) {{}}
+  if (cached) return draw(cached);
+  const url = 'https://router.project-osrm.org/route/v1/driving/' + stops.map(s => s.lng + ',' + s.lat).join(';') + '?overview=full&geometries=geojson';
+  fetch(url).then(r => r.ok ? r.json() : Promise.reject()).then(j => {{
+    if (!j.routes || !j.routes.length) throw 0;
+    const coords = j.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+    draw(coords);
+    try {{ localStorage.setItem(key, JSON.stringify(coords)); }} catch (e) {{}}
+  }}).catch(fallback);
+}})();
+</script>
+"""
+
 GALLERY = re.search(r'<section class="gallery" id="photos">.*?</section>', ARTICLE, re.S).group(0)
 
 # ---------------------------------------------------------------- Rajasthan collection
 cr, cr_ld = crumbs([("/", "Home"), ("/travel-diaries/", "Travel Diaries"), (None, "Rajasthan")])
 hero = HERO.replace('<p class="dek">', cr + '    <p class="dek">', 1)
-coll_body = (hero + "\n" + ROUTE + route_map() + INTRO +
+coll_body = (hero + "\n" + trip_map() + INTRO +
              f'\n<section class="stories">\n<h2>The diary, day by day</h2>\n' + "".join(day_card(d) for d in DAYS) +
              f'</section>\n<div class="prose more-links"><p><a class="button" href="{COMPLETE}">Read the complete travelogue →</a></p>'
              f'<p class="aside">Practical details from this trip are in <a href="/travel-notes/rajasthan-practical-notes/">Rajasthan: practical notes from our eleven days</a>.</p></div>\n'

@@ -359,3 +359,19 @@ mark.added { background: var(--sand); color: var(--sindoor); font-size: 0.78rem;
 .related { margin-top: 4rem; }
 .related h2 { font-size: 1.6rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--indigo); }
 .related .sbs-card { border-top: 0; padding-top: 0; }
+
+/* ---------- Road-trip map ---------- */
+.trip { max-width: 1200px; margin: 48px auto 0; padding: 0 var(--gutter); }
+.trip h2 { font-size: clamp(1.6rem, 4vw, 2.3rem); }
+.trip .when { color: var(--ochre); margin: 0.4rem 0 1rem; }
+#trip-map { height: clamp(380px, 62vh, 620px); border: 1.5px solid var(--indigo); outline: 6px double var(--sand); outline-offset: -1px; background: var(--sand); z-index: 0; }
+#trip-map .leaflet-tile-pane { filter: saturate(0.55) sepia(0.18) brightness(1.03); }
+.trip-note { font-size: 0.88rem; color: var(--indigo-soft); margin: 10px 0 0; font-style: italic; }
+.trip-pin span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--indigo); color: var(--limewash); border: 2px solid var(--ochre); font: 600 13px var(--text); box-shadow: 0 1px 4px rgb(0 0 0 / .35); }
+.leaflet-popup-content { font-family: var(--text); color: var(--indigo); line-height: 1.5; }
+.leaflet-container .leaflet-popup-content a { color: var(--sindoor); }
+.leaflet-container a.leaflet-popup-close-button { color: var(--indigo); }
+.trip-stops { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 4px 24px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); font-size: 0.95rem; }
+.trip-stops .num { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--indigo); color: var(--limewash); font-size: 0.75rem; margin-right: 6px; }
+.trip-stops .d { color: var(--ochre); }
