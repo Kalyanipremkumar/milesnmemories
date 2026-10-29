@@ -457,3 +457,8 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .mh-results .none { padding: 10px 4px; color: var(--indigo-soft); }
 /* keep in-page anchors clear of the sticky bar */
 :target, h3[id], h2[id], .day { scroll-margin-top: 64px; }
+/* logo images (Oct 2026 brand) */
+.mh-logo { display: block; line-height: 0; }
+.mh-logo img { height: 42px; width: auto; }
+.mh-brand .mh-tag { margin-top: 7px; }
+.mh-logo-sm img { height: 28px; width: auto; display: block; }

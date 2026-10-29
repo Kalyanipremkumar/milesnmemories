@@ -62,11 +62,11 @@ def header(path):
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="mh">
   <div class="mh-brand">
-    <a class="mh-logo" href="/">Miles <span class="mh-amp">&amp;</span> Memories</a>
+    <a class="mh-logo" href="/" aria-label="Miles &amp; Memories, home"><img src="/brand/logo-compact.svg" width="261" height="42" alt="Miles &amp; Memories"></a>
     <p class="mh-tag">Heritage · Culture · Journeys</p>
   </div>
   <div class="mh-bar">
-    <a class="mh-logo-sm" href="/">Miles <span class="mh-amp">&amp;</span> Memories</a>
+    <a class="mh-logo-sm" href="/" aria-label="Miles &amp; Memories, home"><img src="/brand/logo-compact.svg" width="174" height="28" alt="Miles &amp; Memories"></a>
     <nav class="mh-nav" id="mh-nav" aria-label="Main">
       <ul class="mh-menu">{"".join(items)}</ul>
     </nav>
@@ -213,6 +213,9 @@ def page(path, *, title, desc, body, active, canonical=True, noindex=False, og_i
 <meta name="twitter:card" content="summary_large_image">
 {''.join('<script type="application/ld+json">' + json.dumps(j, ensure_ascii=False) + '</script>' + chr(10) for j in jsonld)}<script defer src="/_vercel/insights/script.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#F8F5EE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Rozha+One&display=swap" rel="stylesheet">
