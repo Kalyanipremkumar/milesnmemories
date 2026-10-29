@@ -26,7 +26,7 @@ ARTICLE = SRC.split("<article>", 1)[1].split("</article>", 1)[0]
 
 # ---------------------------------------------------------------- navigation
 NAV = [("/", "Home"), ("/travel-diaries/", "Travel Diaries"), ("/art-heritage/", "Art &amp; Heritage"),
-       ("/temples-traditions/", "Temples &amp; Traditions"), ("/travel-notes/", "Travel Notes"),
+       ("/temples-traditions/", "Temples &amp; Traditions"), ("/travel-notes/", "Travel Notes"), ("/stories-behind-the-stones/", "Stories Behind the Stones"),
        ("/about/", "About"), ("/contact/", "Contact")]
 
 def header(active):
@@ -240,6 +240,30 @@ page(COMPLETE, title="My Rajasthan Diaries: the complete travelogue | Miles &amp
      desc="All eleven days of my October 2026 Rajasthan journey on one page: forts, frescoes, temples, desert skies and stories.",
      body=complete_body, active="/travel-diaries/", noindex=True, og_type="article", lightbox=True)
 
+# Draft stories are built (noindex, with a draft banner) only while INCLUDE_DRAFTS is True.
+# Set it to False before publishing the site if any story is still a draft.
+INCLUDE_DRAFTS = True
+# ---------------------------------------------------------------- Stories Behind the Stones
+import yaml, markdown
+STORIES_PATH = "/stories-behind-the-stones/"
+STORIES = []
+sdir = os.path.join(ROOT, "src/stories")
+for fn in sorted(os.listdir(sdir)) if os.path.isdir(sdir) else []:
+    if not fn.endswith(".md"): continue
+    raw = read("src/stories/" + fn)
+    _, fm, body_md = raw.split("---", 2)
+    meta = yaml.safe_load(fm)
+    body_md = body_md.split("## Notes for Kalyani", 1)[0]        # editor notes are never published
+    meta["body_md"] = body_md
+    meta["url"] = STORIES_PATH + meta["slug"] + "/"
+    meta.setdefault("photos", []); meta.setdefault("related", []); meta.setdefault("diary_also", [])
+    if meta.get("status") == "published" or INCLUDE_DRAFTS:
+        STORIES.append(meta)
+BY_SLUG = {m["slug"]: m for m in STORIES}
+ORDER = ["maharana-pratap-and-chetak", "jai-singh-ii-and-jantar-mantar", "amer-and-the-kachwahas", "painted-havelis-of-shekhawati",
+         "rao-bika-and-bikaner", "rawal-jaisal-and-jaisalmer", "rao-jodha-and-jodhpur", "ranakpur-jain-temple",
+         "kumbhalgarh-and-mewar", "eklingji-king-behind-the-kings", "udai-singh-ii-and-udaipur", "shrinathji-and-pichwai"]
+STORIES.sort(key=lambda m: ORDER.index(m["slug"]) if m["slug"] in ORDER else 99)
 # ---------------------------------------------------------------- day articles
 for i, d in enumerate(DAYS):
     prev_ = DAYS[i - 1] if i else None
@@ -263,11 +287,14 @@ for i, d in enumerate(DAYS):
         toc = ('<nav class="chapter-toc" aria-label="In this chapter"><p>In this chapter</p><ol>'
                + "".join(f'<li><a href="#{a}">{t}</a></li>' for a, t in toc_items) + "</ol></nav>\n")
     chunk = chunk.replace("</div>", "</div>\n" + toc, 1)  # after day-head
+    day_stories = [m for m in STORIES if int(m["diary"]) == d["n"] or d["n"] in [int(x) for x in m["diary_also"]]]
+    stories_box = ('<aside class="diary-link"><p>Stories Behind the Stones</p><ul>' + "".join(
+        f'<li><a href="{m["url"]}">{html.escape(m["title"])}</a></li>' for m in day_stories) + '</ul></aside>\n') if day_stories else ""
     hero_fig = (f'<figure class="chapter-hero wide"><img src="/images/rajasthan/{d["img"]}.jpg" width="{d["w"]}" height="{d["h"]}" '
                 f'alt="{d["alt"]}" fetchpriority="high">' + (f'<figcaption>{d["cap"]}</figcaption>' if d["cap"] else "") + '</figure>\n')
     body = (f'<article class="day-article">\n<div class="prose">{cr}<p class="series">Part of <a href="{COLL}">My Rajasthan Diaries</a> · Day {d["n"]} of 11</p></div>\n'
             + hero_fig + chunk +
-            f'\n<div class="prose after-day">{share(d["url"], "Day " + str(d["n"]) + " — " + d["title"] + " | My Rajasthan Diaries")}{pager}'
+            f'\n<div class="prose after-day">{stories_box}{share(d["url"], "Day " + str(d["n"]) + " — " + d["title"] + " | My Rajasthan Diaries")}{pager}'
             f'<p class="aside">Read <a href="{COMPLETE}#day-{d["n"]}">the complete travelogue</a> or '
             f'<a href="{COLL}">see all eleven days</a>.</p></div>\n</article>\n')
     title = f'Day {d["n"]} — {d["title"]} | My Rajasthan Diaries'
@@ -433,9 +460,90 @@ page("/", title="Miles &amp; Memories | Heritage, art and culture travel journal
      jsonld=[{"@context": "https://schema.org", "@type": "WebSite", "name": "Miles & Memories", "url": SITE + "/",
               "description": "Journeys through places, people and heritage.", "author": AUTHOR, "inLanguage": "en"}])
 
+DRAFT_NOTE = ('<p class="draft-flag">Draft for review. This story has not yet been checked and approved for publication.</p>\n')
+
+def esc(t): return html.escape(str(t), quote=True)
+def tag_key(t): return re.sub(r"[^a-z0-9]+", "-", str(t).lower()).strip("-")
+
+def story_card(m):
+    img = thumb(m["hero"], esc(m.get("hero_alt", ""))) if m.get("hero") not in (None, "none") else '<div class="card-noimg" aria-hidden="true"></div>'
+    tags = " ".join(f"d-{tag_key(t)}" for t in m.get("destinations", [])) + " " + \
+           " ".join(f"f-{tag_key(t)}" for t in m.get("figures", [])) + " " + " ".join(f"s-{tag_key(t)}" for t in m.get("subjects", []))
+    return (f'<a class="sbs-card" href="{m["url"]}" data-tags="{tags.strip()}">{img}<div>'
+            f'<p class="when">{esc(" · ".join(m.get("destinations", [])))}</p><h3>{esc(m["title"])}</h3>'
+            f'<p>{esc(m["dek"])}</p></div></a>\n')
+
+def render_md(md_text):
+    out = markdown.markdown(md_text, extensions=["extra", "toc"])
+    out = out.replace(" ⟨added⟩", ' <mark class="added">added by editor</mark>')
+    return out
+
+for m in STORIES:
+    d = DAYS[int(m["diary"]) - 1]
+    cr, cr_ld = crumbs([("/", "Home"), (STORIES_PATH, "Stories Behind the Stones"), (None, esc(m["title"]))])
+    hero = ""
+    if m.get("hero") not in (None, "none"):
+        w, h = Image.open(os.path.join(ROOT, f'images/rajasthan/{m["hero"]}.jpg')).size
+        hero = (f'<figure class="chapter-hero wide"><img src="/images/rajasthan/{m["hero"]}.jpg" width="{w}" height="{h}" '
+                f'alt="{esc(m.get("hero_alt", ""))}" fetchpriority="high"></figure>\n')
+    gallery = ""
+    pics = [x for x in m["photos"] if x and x != m.get("hero")]
+    if pics:
+        gallery = ('<figure class="day-photos"><div class="strip">' + "".join(
+            f'<button data-full="{x}" aria-label="View larger"><img src="/images/rajasthan/{x}-sm.jpg" alt="Photograph from my visit" loading="lazy"></button>'
+            for x in pics) + '</div><figcaption>From my visit.</figcaption></figure>\n')
+    tags = "".join(f'<li>{esc(t)}</li>' for t in m.get("destinations", []) + m.get("figures", []) + m.get("subjects", []))
+    diary_links = [DAYS[int(x) - 1] for x in [m["diary"]] + list(m["diary_also"])]
+    diary_box = ('<aside class="diary-link"><p>From my travel diary</p><ul>' + "".join(
+        f'<li><a href="{x["url"]}">Day {x["n"]} — {x["title"]}</a></li>' for x in diary_links) + '</ul></aside>\n')
+    related = [BY_SLUG[r] for r in m["related"] if r in BY_SLUG][:3]
+    rel = ('<section class="stories related"><h2>Related stories</h2><div class="sbs-grid">' + "".join(story_card(r) for r in related) + '</div></section>\n') if related else ""
+    body = (f'<article class="story-article">\n<header class="page-head">{cr}<p class="series">Stories Behind the Stones</p>'
+            f'<h1>{esc(m["title"])}</h1><p class="dek">{esc(m["dek"])}</p><ul class="tags">{tags}</ul></header>\n'
+            + hero + '<div class="prose story-body">' + (DRAFT_NOTE if m.get("status") != "published" else "")
+            + render_md(m["body_md"]) + diary_box + share(m["url"], m["title"] + " | Stories Behind the Stones") + '</div>\n'
+            + gallery + rel + '</article>\n')
+    page(m["url"], title=f'{esc(m["title"])} | Stories Behind the Stones', desc=esc(m["dek"]), body=body,
+         active=STORIES_PATH, og_type="article", noindex=m.get("status") != "published", lightbox=bool(pics),
+         jsonld=[{"@context": "https://schema.org", "@type": "Article", "headline": m["title"], "description": m["dek"],
+                  "author": AUTHOR, "about": m.get("figures", []) + m.get("destinations", []), "mainEntityOfPage": SITE + m["url"]}, cr_ld])
+
+if STORIES:
+    def chips(label, prefix, key):
+        vals = sorted({t for m in STORIES for t in m.get(key, [])})
+        return (f'<div class="chip-row"><span>{label}</span>' + "".join(
+            f'<button type="button" data-f="{prefix}-{tag_key(v)}">{esc(v)}</button>' for v in vals) + '</div>')
+    cr, cr_ld = crumbs([("/", "Home"), (None, "Stories Behind the Stones")])
+    sbs_body = (f'<header class="page-head sbs-head">\n{cr}<h1>Stories Behind the Stones</h1>\n'
+                f'<p class="dek">History, legends and timeless wisdom from the places I’ve visited.</p>\n</header>\n'
+                f'<div class="prose"><p>My travel diaries tell what I saw and felt. These stories go further back: the real history of the places, '
+                f'the people connected with them, the legends told about them, and what they might still teach us. '
+                f'Every story links back to the diary chapter where I visited the place.</p>'
+                + (DRAFT_NOTE if any(m.get("status") != "published" for m in STORIES) else "") + '</div>\n'
+                f'<section class="sbs-filter" aria-label="Browse stories"><p>Browse by</p>'
+                + chips("Destination", "d", "destinations") + chips("Historical figure", "f", "figures") + chips("Subject", "s", "subjects")
+                + '<button type="button" class="chip-clear" hidden>Show all stories</button></section>\n'
+                f'<section class="stories sbs-list"><h2>Rajasthan</h2><div class="sbs-grid">' + "".join(story_card(m) for m in STORIES) + '</div></section>\n'
+                + """<script>
+(() => {
+  const btns = document.querySelectorAll('.chip-row button'), clear = document.querySelector('.chip-clear');
+  const cards = document.querySelectorAll('.sbs-list .sbs-card');
+  const show = f => { cards.forEach(c => c.hidden = f && !c.dataset.tags.split(' ').includes(f));
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f)); clear.hidden = !f; };
+  btns.forEach(b => b.addEventListener('click', () => show(b.getAttribute('aria-pressed') === 'true' ? null : b.dataset.f)));
+  clear.addEventListener('click', () => show(null));
+})();
+</script>
+""")
+    page(STORIES_PATH, title="Stories Behind the Stones | Miles &amp; Memories",
+         desc="History, legends and timeless wisdom from the places I’ve visited: the founders, rulers, artisans and traditions behind Rajasthan’s forts, temples and havelis.",
+         body=sbs_body, active=STORIES_PATH, noindex=any(m.get("status") != "published" for m in STORIES),
+         jsonld=[{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Stories Behind the Stones", "url": SITE + STORIES_PATH}, cr_ld])
+
 # ---------------------------------------------------------------- sitemap
 urls = ["/", "/travel-diaries/", COLL] + [d["url"] for d in DAYS] + ["/art-heritage/", "/temples-traditions/",
         "/travel-notes/", GUIDE, "/about/", "/contact/"]
+urls += ([STORIES_PATH] if STORIES and all(m.get("status") == "published" for m in STORIES) else []) + [m["url"] for m in STORIES if m.get("status") == "published"]
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
       + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{TODAY}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 print("built", len(urls) + 1, "pages")

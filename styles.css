@@ -324,3 +324,38 @@ picture > source { display: none; }
 .route-map text { font: 600 13px var(--text); fill: var(--indigo); paint-order: stroke; stroke: var(--limewash); stroke-width: 4px; }
 .route-map .d { font-weight: 400; fill: var(--ochre); }
 @media (max-width: 560px) { .route-map text { font-size: 19px; } .route-map .d { display: none; } }
+
+/* ---------- Stories Behind the Stones ---------- */
+.draft-flag { background: var(--sand); border-left: 3px solid var(--sindoor); padding: 10px 14px; font-size: 0.95rem; margin: 1.5rem 0; }
+mark.added { background: var(--sand); color: var(--sindoor); font-size: 0.78rem; padding: 1px 6px; border-radius: 3px; white-space: nowrap; }
+.sbs-head .dek { font-style: italic; }
+.sbs-filter { max-width: 1200px; margin: 2.5rem auto 0; padding: 0 var(--gutter); }
+.sbs-filter > p { font-weight: 600; margin: 0 0 0.6rem; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.chip-row span { font-size: 0.88rem; color: var(--ochre); min-width: 8.5rem; }
+.chip-row button, .chip-clear { border: 1px solid var(--rule); background: transparent; border-radius: 999px; padding: 5px 12px; font: 0.88rem var(--text); color: var(--indigo); cursor: pointer; }
+.chip-row button[aria-pressed="true"] { background: var(--indigo); color: var(--limewash); border-color: var(--indigo); }
+.chip-clear { margin-top: 4px; color: var(--sindoor); }
+.sbs-grid { display: grid; gap: 32px 24px; grid-template-columns: 1fr; margin-top: 24px; }
+@media (min-width: 640px) { .sbs-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .sbs-grid { grid-template-columns: repeat(3, 1fr); } }
+.sbs-card { color: inherit; text-decoration: none; display: block; border-top: 2px solid var(--indigo); padding-top: 14px; }
+.sbs-card[hidden] { display: none; }
+.sbs-card img, .card-noimg { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.card-noimg { background: repeating-linear-gradient(-45deg, var(--ochre) 0 1.2px, transparent 1.2px 7px), var(--sand); }
+.sbs-card h3 { font-size: 1.5rem; margin: 12px 0 6px; }
+.sbs-card:hover h3 { color: var(--sindoor); }
+.sbs-card .when { color: var(--ochre); font-size: 0.88rem; margin: 12px 0 0; }
+.sbs-card p { margin: 0; color: var(--indigo-soft); font-size: 0.97rem; }
+.story-article .page-head h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); max-width: 18ch; }
+.tags { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font-size: 0.82rem; border: 1px solid var(--rule); border-radius: 999px; padding: 3px 10px; color: var(--indigo-soft); }
+.story-body h2 { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.1rem); margin: 2.4rem 0 0.7rem; }
+.story-body h2#wisdom-to-carry-forward, .story-body .wisdom { color: var(--sindoor); }
+.story-body ol li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+.diary-link { border: 1px solid var(--rule); border-left: 3px solid var(--ochre); padding: 12px 18px; margin: 2rem 0; }
+.diary-link p { margin: 0 0 0.3rem; font-weight: 600; }
+.diary-link ul { margin: 0; padding-left: 1.1rem; }
+.related { margin-top: 4rem; }
+.related h2 { font-size: 1.6rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--indigo); }
+.related .sbs-card { border-top: 0; padding-top: 0; }
