@@ -24,10 +24,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Rozha+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body id="top">
 <header class="site-head">
   <a class="wordmark" href="/">Miles &amp; Memories</a>
-  <nav aria-label="Main"><a href="/">Home</a><a href="/travel-diaries/" aria-current="page">Travel Diaries</a><a href="/art-heritage/">Art &amp; Heritage</a><a href="/temples-traditions/">Temples &amp; Traditions</a><a href="/travel-guides/">Travel Guides</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+  <nav aria-label="Main"><a href="/">Home</a><a href="/travel-diaries/" aria-current="page">Travel Diaries</a><a href="/art-heritage/">Art &amp; Heritage</a><a href="/temples-traditions/">Temples &amp; Traditions</a><a href="/travel-notes/">Travel Notes</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
 </header>
 
 <main>
@@ -739,7 +739,8 @@
   <div class="prose">
     <p class="endnote">A city that looked terracotta but was called pink. A stepwell that carried a childhood song. Six havelis that made me dream of owning one. A chance meeting over coffee. Lunch with a friend. A moonlit desert. An artist explaining how a brush is made. And my husband beside me through it all.</p>
   </div>
-</article>
+<div class="prose"><div class="share" aria-label="Share this page"><span>Share</span><a href="https://wa.me/?text=My%20Rajasthan%20Diaries%2C%20the%20complete%20travelogue%20https%3A%2F%2Fmilesnmemories.travel%2Ftravel-diaries%2Frajasthan%2Fcomplete%2F" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmilesnmemories.travel%2Ftravel-diaries%2Frajasthan%2Fcomplete%2F" target="_blank" rel="noopener">Facebook</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmilesnmemories.travel%2Ftravel-diaries%2Frajasthan%2Fcomplete%2F&amp;text=My%20Rajasthan%20Diaries%2C%20the%20complete%20travelogue" target="_blank" rel="noopener">X</a><button type="button" class="copy-link" data-url="https://milesnmemories.travel/travel-diaries/rajasthan/complete/">Copy link</button></div>
+</div></article>
 
 </main>
 
@@ -770,5 +771,17 @@
   <span class="social"><a href="https://www.instagram.com/kalyanidarimisetty/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/kalyani.darimisetty/" rel="me noopener" target="_blank">Facebook</a></span>
   <span>milesnmemories.travel</span>
 </footer>
+<a class="to-top" href="#top" aria-label="Back to top">↑ Top</a>
+<script>
+(() => {
+  const t = document.querySelector('.to-top');
+  const on = () => t.classList.toggle('show', window.scrollY > 1200);
+  addEventListener('scroll', on, {passive: true}); on();
+  document.querySelectorAll('.copy-link').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.url); b.textContent = 'Link copied'; }
+    catch (e) { prompt('Copy this link:', b.dataset.url); }
+  }));
+})();
+</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* Miles n Memories — palette taken from the Rajasthan photographs */
 :root {
   color-scheme: light;
-  --limewash: #f2f4f3;   /* white-washed walls */
+  --limewash: #f7f3ea;   /* warm ivory (was #f2f4f3) */
   --indigo: #1e2552;     /* Junagarh blue room, ink */
   --indigo-soft: #4a5070;
   --ochre: #c98a12;      /* Jaisalmer sandstone */
@@ -300,3 +300,27 @@ picture > source { display: none; }
 .foot-links a { color: inherit; margin-right: 1rem; }
 .foot-links a:last-child { margin-right: 0; }
 .foot-links a:hover { color: var(--sindoor); }
+
+/* ---------- Reading features (Oct 2026 brief) ---------- */
+.chapter-hero { margin: 1.5rem auto 0; }
+.chapter-hero img { width: auto; max-width: 100%; max-height: 78vh; margin: 0 auto; }
+.day-article .day-head h1 { font-size: clamp(2.3rem, 6.5vw, 3.8rem); margin: 0 0 0.5rem; }
+.day-article .day-head h2 { font-family: var(--text); font-weight: 400; font-style: italic; font-size: clamp(1.15rem, 2.6vw, 1.4rem); color: var(--indigo-soft); line-height: 1.4; }
+.chapter-toc { border-left: 3px solid var(--ochre); padding: 4px 0 4px 18px; margin: 0 0 2rem; font-size: 0.97rem; }
+.chapter-toc p { margin: 0 0 0.4rem; font-weight: 600; }
+.chapter-toc ol { margin: 0; padding-left: 1.2rem; }
+.chapter-toc a { color: var(--indigo); }
+.day-article h3[id] { scroll-margin-top: 16px; }
+.share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 2rem 0 1.5rem; font-size: 0.92rem; }
+.share span { font-weight: 600; margin-right: 4px; }
+.share a, .share button { border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; color: var(--indigo); text-decoration: none; background: transparent; font: inherit; cursor: pointer; }
+.share a:hover, .share button:hover { border-color: var(--sindoor); color: var(--sindoor); }
+.to-top { position: fixed; right: 16px; bottom: 16px; z-index: 5; background: var(--indigo); color: var(--limewash); text-decoration: none; font-size: 0.9rem; padding: 10px 14px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.to-top.show { opacity: 0.92; pointer-events: auto; }
+.to-top:hover { background: var(--sindoor); text-decoration: none; }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
+.route-figure { margin-top: 1.5rem; }
+.route-map { width: 100%; height: auto; max-width: 760px; display: block; margin: 0 auto; background: repeating-linear-gradient(-45deg, rgb(201 138 18 / .07) 0 1px, transparent 1px 9px); border: 1px solid var(--rule); }
+.route-map text { font: 600 13px var(--text); fill: var(--indigo); paint-order: stroke; stroke: var(--limewash); stroke-width: 4px; }
+.route-map .d { font-weight: 400; fill: var(--ochre); }
+@media (max-width: 560px) { .route-map text { font-size: 19px; } .route-map .d { display: none; } }

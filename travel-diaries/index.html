@@ -25,10 +25,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Rozha+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body id="top">
 <header class="site-head">
   <a class="wordmark" href="/">Miles &amp; Memories</a>
-  <nav aria-label="Main"><a href="/">Home</a><a href="/travel-diaries/" aria-current="page">Travel Diaries</a><a href="/art-heritage/">Art &amp; Heritage</a><a href="/temples-traditions/">Temples &amp; Traditions</a><a href="/travel-guides/">Travel Guides</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+  <nav aria-label="Main"><a href="/">Home</a><a href="/travel-diaries/" aria-current="page">Travel Diaries</a><a href="/art-heritage/">Art &amp; Heritage</a><a href="/temples-traditions/">Temples &amp; Traditions</a><a href="/travel-notes/">Travel Notes</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
 </header>
 
 <main>
@@ -59,5 +59,17 @@
   <span class="social"><a href="https://www.instagram.com/kalyanidarimisetty/" rel="me noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/kalyani.darimisetty/" rel="me noopener" target="_blank">Facebook</a></span>
   <span>milesnmemories.travel</span>
 </footer>
+<a class="to-top" href="#top" aria-label="Back to top">↑ Top</a>
+<script>
+(() => {
+  const t = document.querySelector('.to-top');
+  const on = () => t.classList.toggle('show', window.scrollY > 1200);
+  addEventListener('scroll', on, {passive: true}); on();
+  document.querySelectorAll('.copy-link').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.url); b.textContent = 'Link copied'; }
+    catch (e) { prompt('Copy this link:', b.dataset.url); }
+  }));
+})();
+</script>
 </body>
 </html>
