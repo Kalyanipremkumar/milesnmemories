@@ -515,3 +515,16 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .art-note svg { flex: none; color: var(--ochre); margin-top: 4px; }
 .art-note p { margin: 0; }
 .to-top { border: 1px solid #C38A24; box-shadow: 0 2px 8px rgb(0 0 0 / .25); }
+
+/* Contact refinements */
+.contact-head h1 { font-size: clamp(2.4rem, 7.65vw, 5.1rem); }   /* ~15% smaller than other page titles */
+.contact-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.contact-card:hover, .contact-card:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 24px rgb(24 43 84 / .10);
+  border-color: var(--rule); border-top-color: #C38A24; color: var(--indigo); }
+.contact-card:hover .cc-t, .contact-card:focus-visible .cc-t { color: var(--sindoor); }
+.contact-card:hover svg { color: #C38A24; }
+@media (max-width: 759px) { .contact-options { gap: 14px; } }
+@media (prefers-reduced-motion: reduce) { .contact-card { transition: none; } .contact-card:hover { transform: none; } }
+.contact-close { max-width: 40ch; margin: clamp(36px, 5vw, 56px) auto 0; padding: 0 var(--gutter); text-align: center;
+  font-family: var(--text); font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.35rem); line-height: 1.6; color: var(--indigo-soft); }
+.contact-close::before { content: ""; display: block; width: 48px; height: 1px; background: #C38A24; margin: 0 auto 18px; }

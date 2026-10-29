@@ -638,13 +638,14 @@ page("/about/", title="About Kalyani | Miles &amp; Memories",
      jsonld=[{"@context": "https://schema.org", "@type": "AboutPage", "url": SITE + "/about/", "mainEntity": AUTHOR}, cr_ld])
 
 cr, cr_ld = crumbs([("/", "Home"), (None, "Contact")])
-contact_body = (f'<header class="page-head">\n{cr}<h1>Contact</h1>\n'
+contact_body = (f'<header class="page-head contact-head">\n{cr}<h1>Contact</h1>\n'
                 f'<p class="dek">Have a travel story to share, a heritage site to recommend, or a question about one of my journeys? I’d love to hear from you.</p>\n</header>\n'
                 f'<section class="contact-options" aria-label="Ways to get in touch">'
-                f'<a class="contact-card wa" href="{WHATSAPP}" target="_blank" rel="noopener">{ICONS["whatsapp"]}<span class="cc-t">Chat on WhatsApp</span><span class="cc-d">+91 99801 54461</span></a>'
-                f'<a class="contact-card" href="{INSTAGRAM}" target="_blank" rel="me noopener">{ICONS["instagram"]}<span class="cc-t">Instagram</span><span class="cc-d">@kalyanidarimisetty</span></a>'
-                f'<a class="contact-card" href="{FACEBOOK}" target="_blank" rel="me noopener">{ICONS["facebook"]}<span class="cc-t">Facebook</span><span class="cc-d">facebook.com/kalyani.darimisetty</span></a>'
-                f'</section>\n')
+                f'<a class="contact-card wa" href="{WHATSAPP}" target="_blank" rel="noopener noreferrer">{ICONS["whatsapp"]}<span class="cc-t">Chat on WhatsApp</span><span class="cc-d">+91 99801 54461</span></a>'
+                f'<a class="contact-card" href="{INSTAGRAM}" target="_blank" rel="me noopener noreferrer">{ICONS["instagram"]}<span class="cc-t">Instagram</span><span class="cc-d">@kalyanidarimisetty</span></a>'
+                f'<a class="contact-card" href="{FACEBOOK}" target="_blank" rel="me noopener noreferrer">{ICONS["facebook"]}<span class="cc-t">Facebook</span><span class="cc-d">facebook.com/kalyani.darimisetty</span></a>'
+                f'</section>\n'
+                f'<p class="contact-close">Every journey brings a new story. Sometimes, the most interesting ones begin with a conversation.</p>\n')
 page("/contact/", title="Contact | Miles &amp; Memories",
      desc="How to get in touch with Kalyani at Miles & Memories.", body=contact_body, active="/contact/",
      jsonld=[{"@context": "https://schema.org", "@type": "ContactPage", "url": SITE + "/contact/"}, cr_ld])
