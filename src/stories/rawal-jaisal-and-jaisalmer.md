@@ -1,5 +1,5 @@
 ---
-title: The Fort That Never Emptied: Rawal Jaisal and the Golden City
+title: The Fort That Never Emptied — Rawal Jaisal and the Golden City
 slug: rawal-jaisal-and-jaisalmer
 dek: In 1156 a Bhati prince moved his capital to a lonely three-peaked hill. Nearly nine centuries later, people still live inside the fort he founded.
 destinations: [Jaisalmer, Thar Desert]

@@ -1,5 +1,5 @@
 ---
-title: The Fort on the Mountain of Birds: Rao Jodha and the Founding of Jodhpur
+title: The Fort on the Mountain of Birds — Rao Jodha and the Founding of Jodhpur
 slug: rao-jodha-and-jodhpur
 dek: In 1459 a Rathore ruler left his ancestral capital for a bare rock hill. A hermit's curse and one man's sacrifice became part of Mehrangarh's founding story.
 destinations: [Jodhpur, Marwar]
@@ -16,7 +16,7 @@ status: draft
 
 From almost anywhere in Jodhpur's old city you can look up and see Mehrangarh. Its walls rise straight out of the rock, so it is hard to tell where the hill ends and the fort begins. Rudyard Kipling is often quoted as calling it the work of "angels and giants."
 
-The fort was not built by angels or giants, of course. It was begun in 1459 by a ruler who had spent years in exile winning back his inheritance, and who wanted a capital that would be harder to take than the one his family had lost. Jodhpur's own tradition adds two more figures to that story: a hermit who did not want to leave, and a man who is remembered for giving his life to the foundations.
+It was in fact begun in 1459 by a ruler who had spent years in exile winning back his inheritance, and who wanted a capital harder to take than the old one. Jodhpur's tradition adds two more figures: a hermit who did not want to leave, and a man remembered for giving his life to the foundations.
 
 ## Where and when
 
@@ -34,9 +34,7 @@ The Trust explains the name Mehrangarh as "fort of the sun," a reference to the 
 
 Jodha had many sons. Among them were **Satal** and **Suja**, who succeeded him in turn at Jodhpur, and **Bika**, who founded Bikaner.
 
-**Cheeria Nathji**, the hermit of the hill, and **Rajiya Bambhi**, the man remembered in the foundations, belong to the fort's legend. They are discussed below.
-
-**Karni Mata**, the Charan holy woman revered by both the Jodhpur and Bikaner Rathores, appears in devotional accounts of the founding.
+**Cheeria Nathji**, the hermit, **Rajiya Bambhi**, and **Karni Mata**, the Charan holy woman revered by the Rathores, belong to the founding legends discussed below.
 
 ## What happened
 
@@ -50,11 +48,11 @@ The city of Jodhpur grew in the fort's shadow and took its founder's name. The f
 
 **The hermit's curse.** According to legend, the hill had one inhabitant, a hermit called Cheeria Nathji, the "lord of birds." When Jodha's men cleared the hill to build, the hermit was forced out. In anger he cursed the place with scarcity of water. One version says Jodha turned to Karni Mata, who persuaded the hermit to leave. Another says the king's men evicted him and the new walls collapsed. In most tellings Jodha tried to appease him by building him a dwelling and a temple within the fort.
 
-**Rajiya Bambhi.** According to tradition, a man named Rajiya Bambhi (also recorded as Rajiya Bhambi and as Rajaram Meghwal) volunteered to be buried alive in the fort's foundations to bring it good fortune. He did so on the condition that the ruling family would look after his descendants. Some retellings say his sacrifice was needed to break the hermit's curse. Others treat the two stories separately. Accounts say his family was granted land in an area of Jodhpur called Raj Bagh, where his descendants still live. A memorial to him has been pointed out to visitors inside the fort. We cannot know what really happened in 1459. What is certain is that the city has kept his name alive for more than five centuries.
+**Rajiya Bambhi.** According to tradition, a man named Rajiya Bambhi (also recorded as Rajiya Bhambi and as Rajaram Meghwal) volunteered to be buried alive in the fort's foundations to bring it good fortune. He did so on the condition that the ruling family would look after his descendants. Some retellings say his sacrifice was needed to break the hermit's curse. Others treat the two stories separately. Accounts say his family was granted land in an area of Jodhpur called Raj Bagh, where his descendants still live. A memorial to him has been pointed out to visitors inside the fort. We cannot know what really happened in 1459, but the city has kept his name alive for centuries.
 
-**Karni Mata's foundation.** Devotional accounts of Karni Mata say she laid the foundation of Jodhpur's fort in 1459 and foretold that Jodha's descendants would rule it for many generations. Like her role in Bikaner's story, this is a matter of faith and dynastic tradition.
+**Karni Mata's foundation.** Devotional accounts of Karni Mata say she laid the foundation of Jodhpur's fort in 1459 and foretold that Jodha's descendants would rule it for many generations. This is a matter of faith.
 
-**Dates and spellings.** Jodha's dates are usually given as 1416–1489. The year he formally became Rao is recorded as both 1438 and 1439. The hill's name appears as Bhaurcheeria, Bhakurcheeria and Chidiya-tunk. The hermit is sometimes Chidiya Nath. Rajiya's name has several spellings. None of these differences changes the outline of the story.
+**Dates and spellings.** Jodha's dates are usually given as 1416–1489, and his accession as 1438 or 1439. The hill appears as Bhaurcheeria, Bhakurcheeria or Chidiya-tunk, and the hermit sometimes as Chidiya Nath.
 
 **The "angels and giants" quote.** It is widely attributed to Kipling, but I could not trace it to a specific published work.
 

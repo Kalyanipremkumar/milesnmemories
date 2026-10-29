@@ -1,5 +1,5 @@
 ---
-title: A Son's Kingdom in the Sand: Rao Bika and the Founding of Bikaner
+title: A Son’s Kingdom in the Sand — Rao Bika and the Founding of Bikaner
 slug: rao-bika-and-bikaner
 dek: A father's offhand remark, an uncle's promise and a desert called Jangladesh. How a younger Rathore prince built Bikaner, and why its famous fort came a century later.
 destinations: [Bikaner, Marwar]
