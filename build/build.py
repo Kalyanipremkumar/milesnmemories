@@ -756,7 +756,7 @@ for path, c in CATS.items():
     body = f'<header class="page-head">\n{cr}<h1>{c["name"]}</h1>\n<p class="dek">{c["intro"]}</p>\n</header>\n'
     body += ('<section class="stories cat-block"><h2>From my travel diaries</h2><div class="sbs-grid">'
              + "".join(section_card(n, h) for n, h in c["sections"]) + "</div></section>\n")
-    if sts:
+    if sts and c.get("show_stories"):  # stories live in their own section; off by default
         body += ('<section class="stories cat-block"><h2>Stories Behind the Stones</h2><div class="sbs-grid">'
                  + "".join(story_card(m) for m in sts) + f'</div><p><a href="{STORIES_PATH}">All Stories Behind the Stones →</a></p></section>\n')
     page(path, title=f'{c["name"]} | Miles &amp; Memories', desc=c["desc"], body=body, active=path,
