@@ -11,7 +11,7 @@ hero: none
 hero_alt: none
 photos: []
 related: [eklingji-king-behind-the-kings, udai-singh-ii-and-udaipur, painted-havelis-of-shekhawati]
-status: draft
+status: published
 ---
 
 Sometimes, a place becomes famous not because a king founded a city, but because people believe the divine chose to stay there.

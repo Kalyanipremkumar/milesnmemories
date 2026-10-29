@@ -11,7 +11,7 @@ hero: cp02
 hero_alt: The cream facade of balconies and cupolas of the City Palace, Udaipur
 photos: [ue01, cp03, cp05, u09]
 related: [kumbhalgarh-and-mewar, maharana-pratap-and-chetak, eklingji-king-behind-the-kings]
-status: draft
+status: published
 ---
 
 Udaipur, with its palaces rising from Lake Pichola, feels as if it was always meant to be there. In fact it was a new capital, created by a ruler of Mewar who was looking for somewhere safer than his ancestral fortress of Chittorgarh.

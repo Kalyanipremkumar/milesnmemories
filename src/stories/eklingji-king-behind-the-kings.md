@@ -11,7 +11,7 @@ hero: none
 hero_alt: none
 photos: []
 related: [udai-singh-ii-and-udaipur, kumbhalgarh-and-mewar, shrinathji-and-pichwai]
-status: draft
+status: published
 ---
 
 What if a kingdom believed that its true ruler was not the Maharana sitting on the throne, but Lord Shiva himself?

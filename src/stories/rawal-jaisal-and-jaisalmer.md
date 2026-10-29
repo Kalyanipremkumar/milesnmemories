@@ -11,7 +11,7 @@ hero: js01
 hero_alt: Kalyani and Prem on a terrace overlooking the sandstone walls and gate of Jaisalmer Fort
 photos: [bb02, js04, js06, ji02]
 related: [rao-bika-and-bikaner, rao-jodha-and-jodhpur, painted-havelis-of-shekhawati]
-status: draft
+status: published
 ---
 
 Most of Rajasthan's great forts are now museums. You buy a ticket, walk through empty courtyards and imagine the people who once lived there. Jaisalmer is different. Inside its yellow sandstone walls people still cook, pray, run shops and hang out washing. UNESCO describes it as a township "still inhabited today."

@@ -11,7 +11,7 @@ hero: n02
 hero_alt: Kalyani standing beside a carved marble elephant among the temple's carved pillars at Ranakpur
 photos: [n04, n05, n06, n01]
 related: [kumbhalgarh-and-mewar, eklingji-king-behind-the-kings, maharana-pratap-and-chetak]
-status: draft
+status: published
 ---
 
 You come upon Ranakpur almost by surprise. The road winds through the green folds of the Aravalli hills, and then a great pale temple appears in a quiet valley, its spires and domes climbing up the slope. Inside, the light falls between rows and rows of carved marble pillars, and the building seems to go on and on.

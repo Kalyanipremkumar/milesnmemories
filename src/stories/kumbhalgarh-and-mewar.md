@@ -11,7 +11,7 @@ hero: m02
 hero_alt: The walls of Kumbhalgarh Fort winding over green Aravalli hills
 photos: [m01]
 related: [maharana-pratap-and-chetak, ranakpur-jain-temple, udai-singh-ii-and-udaipur]
-status: draft
+status: published
 ---
 
 From a distance, Kumbhalgarh looks less like a building than a line drawn across the Aravalli hills: wall after wall, rising and dipping with the ridges. It was built in the fifteenth century by Rana Kumbha of Mewar. For the next two hundred years it was the place Mewar's rulers turned to when everything else was in danger.

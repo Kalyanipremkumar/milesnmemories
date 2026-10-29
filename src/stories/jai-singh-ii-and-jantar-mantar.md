@@ -11,7 +11,7 @@ hero: none
 hero_alt: 
 photos: [jp16]
 related: [amer-and-the-kachwahas, udai-singh-ii-and-udaipur, rao-jodha-and-jodhpur]
-status: draft
+status: published
 ---
 
 Walk a few minutes from Jaipur's City Palace and you reach a courtyard that looks at first like a sculpture park: a giant triangular wall with a staircase running up its spine, sunken marble bowls, curving ramps and round towers open to the sky. Nothing here is decorative. Each structure is an instrument, built from stone and masonry, for measuring the movements of the sun, moon and stars.

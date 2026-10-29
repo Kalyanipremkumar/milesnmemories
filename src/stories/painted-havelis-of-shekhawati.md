@@ -11,7 +11,7 @@ hero: r04
 hero_alt: Two travellers standing in a haveli courtyard whose walls are painted with elephants, horses and floral borders
 photos: [r05, r06, r07]
 related: [amer-and-the-kachwahas, rao-bika-and-bikaner, rawal-jaisal-and-jaisalmer]
-status: draft
+status: published
 ---
 
 In a Mandawa courtyard, you can look up and see Krishna on one wall, a row of elephants with their mahouts on another, and, tucked into a border, a steam train puffing across the plaster. The people who paid for these paintings often spent most of their lives hundreds of kilometres away, in the counting houses of Calcutta and Bombay.

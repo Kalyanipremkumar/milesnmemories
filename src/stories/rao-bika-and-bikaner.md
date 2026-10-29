@@ -11,7 +11,7 @@ hero: jg01
 hero_alt: Kalyani standing before the long carved facade of Junagarh Fort in Bikaner
 photos: [jg04, jg03, jg12]
 related: [rao-jodha-and-jodhpur, rawal-jaisal-and-jaisalmer, painted-havelis-of-shekhawati]
-status: draft
+status: published
 ---
 
 Most cities in Rajasthan are named after the person who founded them, but few founding stories begin with a joke. Bikaner's does, at least as it is usually told: a father teases his son in front of the court, and the son takes the teasing as a dare. Within a generation that son had a capital of his own in the northern Thar.

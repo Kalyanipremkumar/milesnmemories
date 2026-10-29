@@ -11,7 +11,7 @@ hero: j09
 hero_alt: Kalyani standing below the towering sandstone walls of Mehrangarh Fort
 photos: [j06, j08]
 related: [rao-bika-and-bikaner, rawal-jaisal-and-jaisalmer, kumbhalgarh-and-mewar]
-status: draft
+status: published
 ---
 
 From almost anywhere in Jodhpur's old city you can look up and see Mehrangarh. Its walls rise straight out of the rock, so it is hard to tell where the hill ends and the fort begins. Rudyard Kipling is often quoted as calling it the work of "angels and giants."

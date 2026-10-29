@@ -11,7 +11,7 @@ hero: m01
 hero_alt: Kalyani standing on a walkway high on the walls of Kumbhalgarh Fort, the traditional birthplace of Maharana Pratap
 photos: [m02]
 related: [kumbhalgarh-and-mewar, udai-singh-ii-and-udaipur, eklingji-king-behind-the-kings]
-status: draft
+status: published
 ---
 
 Few people from Rajasthan's past are loved as widely as Maharana Pratap, the sixteenth-century ruler of Mewar who would not submit to the Mughal emperor Akbar. And few animals in Indian history are as famous as Chetak, the horse said to have carried him out of the Battle of Haldighati.

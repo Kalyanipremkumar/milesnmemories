@@ -11,7 +11,7 @@ hero: jp17
 hero_alt: Amer Fort's pale walls and palace buildings rising up the hillside above Maota Lake
 photos: [jp15, jp22, jp26]
 related: [jai-singh-ii-and-jantar-mantar, maharana-pratap-and-chetak, kumbhalgarh-and-mewar]
-status: draft
+status: published
 ---
 
 From the road, Amer looks like one building that has been poured over the hill. Its pale walls follow the ridge, its gateways step up the slope, and Maota Lake sits below like a mirror. Above it stands Jaigarh; along the ridge, Nahargarh overlooks Jaipur.

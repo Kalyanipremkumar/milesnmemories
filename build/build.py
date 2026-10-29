@@ -649,9 +649,9 @@ def story_card(m):
             f'<p class="when">{esc(" · ".join(m.get("destinations", [])))}</p><h3>{esc(m["title"])}</h3>'
             f'<p>{esc(m["dek"])}</p></div></a>\n')
 
-def render_md(md_text):
+def render_md(md_text, published=False):
     out = markdown.markdown(md_text, extensions=["extra", "toc"])
-    out = out.replace(" ⟨added⟩", ' <mark class="added">added by editor</mark>')
+    out = out.replace(" ⟨added⟩", "" if published else ' <mark class="added">added by editor</mark>')
     return out
 
 for m in STORIES:
@@ -677,7 +677,7 @@ for m in STORIES:
     body = (f'<article class="story-article">\n<header class="page-head">{cr}<p class="series">Stories Behind the Stones</p>'
             f'<h1>{esc(m["title"])}</h1><p class="dek">{esc(m["dek"])}</p><ul class="tags">{tags}</ul></header>\n'
             + hero + '<div class="prose story-body">' + (DRAFT_NOTE if m.get("status") != "published" else "")
-            + render_md(m["body_md"]) + diary_box + share(m["url"], m["title"] + " | Stories Behind the Stones") + '</div>\n'
+            + render_md(m["body_md"], m.get("status") == "published") + diary_box + share(m["url"], m["title"] + " | Stories Behind the Stones") + '</div>\n'
             + gallery + rel + '</article>\n')
     page(m["url"], title=f'{esc(m["title"])} | Stories Behind the Stones', desc=esc(m["dek"]), body=body,
          active=STORIES_PATH, og_type="article", noindex=m.get("status") != "published", lightbox=bool(pics),
