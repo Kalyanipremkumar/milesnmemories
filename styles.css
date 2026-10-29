@@ -498,3 +498,20 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
   .mf-brand { grid-column: 1 / -1; }
   .mf-col li { margin-bottom: 7px; font-size: 0.93rem; }
 }
+
+/* ---------- Varnam Studio (Oct 2026) ---------- */
+.varnam { max-width: 1200px; margin: clamp(56px, 8vw, 96px) auto 0; padding: 0 var(--gutter); }
+.varnam-inner { max-width: var(--measure); margin: 0 auto; padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 48px);
+  border: 1px solid var(--rule); border-top: 3px solid var(--ochre); background: rgb(255 255 255 / .45); text-align: center; }
+.varnam-kicker { margin: 0 0 8px; font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ochre); }
+.varnam h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1.1rem; }
+.varnam p { margin: 0 0 1em; }
+.varnam-cta { margin-top: 1.6rem !important; }
+.button-gold { background: #C38A24; color: #182B54; }
+.button-gold:hover { background: #182B54; color: #F8F5EE; }
+.varnam-url { font-size: 0.92rem; color: var(--indigo-soft); }
+.art-note { display: flex; gap: 12px; align-items: flex-start; margin: 2rem 0; padding: 14px 18px; border-left: 3px solid var(--ochre);
+  background: rgb(195 138 36 / .07); font-size: 0.95rem; color: var(--indigo-soft); }
+.art-note svg { flex: none; color: var(--ochre); margin-top: 4px; }
+.art-note p { margin: 0; }
+.to-top { border: 1px solid #C38A24; box-shadow: 0 2px 8px rgb(0 0 0 / .25); }

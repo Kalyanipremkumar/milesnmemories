@@ -134,10 +134,14 @@ SEARCH_INDEX = []
 WHATSAPP = "https://wa.me/919980154461"
 INSTAGRAM = "https://www.instagram.com/kalyanidarimisetty/"
 FACEBOOK = "https://www.facebook.com/kalyani.darimisetty/"
+VARNAM = "https://www.varnamstudio.com"
+EXT = 'target="_blank" rel="noopener noreferrer"'
+
 ICONS = {
     "whatsapp": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2A9.7 9.7 0 0 0 3.7 16.9L2.3 21.7l4.9-1.3A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.2-.2-.2-.5-.3Z"/></svg>',
     "instagram": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>',
     "facebook": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 21.5v-8h2.7l.4-3.2h-3.1V8.3c0-.9.3-1.5 1.6-1.5h1.6V4a22 22 0 0 0-2.4-.1c-2.4 0-4 1.4-4 4.1v2.3H7.6v3.2h2.7v8h3.2Z"/></svg>',
+    "art": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.7-.8 1.7-1.6 0-.5-.2-.8-.4-1.1-.3-.3-.4-.6-.4-1 0-.9.7-1.6 1.6-1.6h1.9A4.6 4.6 0 0 0 21 11.1C21 6.6 17 3 12 3Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="7.6" cy="11" r="1.3" fill="currentColor"/><circle cx="10.3" cy="7.2" r="1.3" fill="currentColor"/><circle cx="14.8" cy="7.4" r="1.3" fill="currentColor"/></svg>',
     "contact": '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3.8 7 8.2 6 8.2-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
 }
 FOOTER = f"""<footer class="mf">
@@ -161,9 +165,10 @@ FOOTER = f"""<footer class="mf">
     <div class="mf-col">
       <h2>Connect</h2>
       <ul class="mf-social">
-        <li><a href="{WHATSAPP}" target="_blank" rel="noopener">{ICONS["whatsapp"]}<span>Chat on WhatsApp</span></a></li>
-        <li><a href="{INSTAGRAM}" target="_blank" rel="me noopener">{ICONS["instagram"]}<span>Instagram</span></a></li>
-        <li><a href="{FACEBOOK}" target="_blank" rel="me noopener">{ICONS["facebook"]}<span>Facebook</span></a></li>
+        <li><a href="{INSTAGRAM}" target="_blank" rel="me noopener noreferrer">{ICONS["instagram"]}<span>Instagram</span></a></li>
+        <li><a href="{FACEBOOK}" target="_blank" rel="me noopener noreferrer">{ICONS["facebook"]}<span>Facebook</span></a></li>
+        <li><a href="{WHATSAPP}" {EXT}>{ICONS["whatsapp"]}<span>Chat on WhatsApp</span></a></li>
+        <li><a href="{VARNAM}" target="_blank" rel="me noopener noreferrer">{ICONS["art"]}<span>Varnam Studio — My Art</span></a></li>
         <li><a href="/contact/">{ICONS["contact"]}<span>Contact</span></a></li>
       </ul>
     </div>
@@ -412,6 +417,11 @@ page(COMPLETE, title="My Rajasthan Diaries: the complete travelogue | Miles &amp
      desc="All eleven days of my October 2026 Rajasthan journey on one page: forts, frescoes, temples, desert skies and stories.",
      body=complete_body, active="/travel-diaries/", noindex=True, og_type="article", lightbox=True)
 
+# A quiet note pointing to Varnam Studio, only on chapters about traditional painting (Mandawa frescoes, Udaipur painters)
+ART_NOTE_DAYS = {3, 10}
+ART_NOTE = (f'<aside class="art-note">{ICONS["art"]}<p>My journeys often inspire my artwork. '
+            f'You can discover my artistic journey at '
+            f'<a href="{VARNAM}" target="_blank" rel="me noopener noreferrer">Varnam Studio</a>.</p></aside>\n')
 # ---------------------------------------------------------------- day articles
 for i, d in enumerate(DAYS):
     prev_ = DAYS[i - 1] if i else None
@@ -442,7 +452,7 @@ for i, d in enumerate(DAYS):
                 f'alt="{d["alt"]}" fetchpriority="high">' + (f'<figcaption>{d["cap"]}</figcaption>' if d["cap"] else "") + '</figure>\n')
     body = (f'<article class="day-article">\n<div class="prose">{cr}<p class="series">Part of <a href="{COLL}">My Rajasthan Diaries</a> · Day {d["n"]} of 11</p></div>\n'
             + hero_fig + chunk +
-            f'\n<div class="prose after-day">{stories_box}{share(d["url"], "Day " + str(d["n"]) + " — " + d["title"] + " | My Rajasthan Diaries")}{pager}'
+            f'\n<div class="prose after-day">{ART_NOTE if d["n"] in ART_NOTE_DAYS else ""}{stories_box}{share(d["url"], "Day " + str(d["n"]) + " — " + d["title"] + " | My Rajasthan Diaries")}{pager}'
             f'<p class="aside">Read <a href="{COMPLETE}#day-{d["n"]}">the complete travelogue</a> or '
             f'<a href="{COLL}">see all eleven days</a>.</p></div>\n</article>\n')
     title = f'Day {d["n"]} — {d["title"]} | My Rajasthan Diaries'
@@ -607,9 +617,21 @@ WELCOME_PARAS = re.findall(r"<p>.*?</p>", WELCOME)
 cr, cr_ld = crumbs([("/", "Home"), (None, "About")])
 BEYOND = re.search(r'<section class="beyond">.*?</section>', HOME, re.S).group(0)
 CLOSING = re.search(r'<section class="closing">.*?</section>', HOME, re.S).group(0)
+VARNAM_SECTION = f"""<section class="varnam" aria-labelledby="varnam-h">
+  <div class="varnam-inner">
+    <p class="varnam-kicker">My other passion — Varnam Studio</p>
+    <h2 id="varnam-h">When Travel Meets Art</h2>
+    <p>Apart from travelling, I have a deep love for traditional Indian art, particularly Mithila painting.</p>
+    <p>My journeys often inspire my artwork. Whether it’s a painted haveli in Rajasthan, an ancient temple, or an intricately carved doorway, I find myself looking at these places through the eyes of an artist.</p>
+    <p>Through Varnam Studio, I explore and celebrate India’s traditional art forms.</p>
+    <p class="varnam-cta"><a class="button button-gold" href="{VARNAM}" target="_blank" rel="me noopener noreferrer">Explore My Art — Varnam Studio <span aria-hidden="true">↗</span></a></p>
+    <p class="varnam-url">You can discover my artistic journey at <a href="{VARNAM}" target="_blank" rel="me noopener noreferrer">www.varnamstudio.com</a>.</p>
+  </div>
+</section>
+"""
 about_body = (f'<div class="prose page-top">{cr}</div>\n' + WELCOME.replace('id="about"', 'id="about-me"')
               .replace('loading="lazy" ', "").replace("<h2>Hello, I’m Kalyani.</h2>", "<h1>Hello, I’m Kalyani.</h1>")
-              + "\n" + BEYOND + "\n" + CLOSING)
+              + "\n" + VARNAM_SECTION + "\n" + BEYOND + "\n" + CLOSING)
 page("/about/", title="About Kalyani | Miles &amp; Memories",
      desc="About Kalyani, the traveller and traditional Indian art enthusiast behind Miles & Memories, a personal journal of heritage, art and travel.",
      body=about_body, active="/about/",
@@ -795,6 +817,8 @@ for path, c in CATS.items():
     body = f'<header class="page-head">\n{cr}<h1>{c["name"]}</h1>\n<p class="dek">{c["intro"]}</p>\n</header>\n'
     body += ('<section class="stories cat-block"><h2>From my travel diaries</h2><div class="sbs-grid">'
              + "".join(section_card(n, h) for n, h in c["sections"]) + "</div></section>\n")
+    if path == "/art-heritage/":
+        body += '<div class="prose">' + ART_NOTE + '</div>\n'
     if sts and c.get("show_stories"):  # stories live in their own section; off by default
         body += ('<section class="stories cat-block"><h2>Stories Behind the Stones</h2><div class="sbs-grid">'
                  + "".join(story_card(m) for m in sts) + f'</div><p><a href="{STORIES_PATH}">All Stories Behind the Stones →</a></p></section>\n')
