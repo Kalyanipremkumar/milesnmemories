@@ -14,7 +14,7 @@ related: [kumbhalgarh-and-mewar, maharana-pratap-and-chetak, eklingji-king-behin
 status: draft
 ---
 
-Udaipur feels like a city that was always meant to be there, with its palaces rising from the edge of Lake Pichola and white buildings folded into the hills. In fact it was a new capital, created by a ruler of Mewar who was looking for somewhere safer than his ancestral fortress of Chittorgarh.
+Udaipur, with its palaces rising from Lake Pichola, feels as if it was always meant to be there. In fact it was a new capital, created by a ruler of Mewar who was looking for somewhere safer than his ancestral fortress of Chittorgarh.
 
 That ruler was Maharana Udai Singh II, and history has not always been kind to him. His life began with one of Rajasthan's most famous rescue stories, and it ended in exile in the hills. In between, he made the decision that gave Mewar its future capital.
 
@@ -31,8 +31,6 @@ The site he later chose for his new capital lay in the Girwa valley to the south
 **Banbir** was a relative who killed the reigning Rana, Vikramaditya (Udai Singh's half-brother), in the mid-1530s and seized power at Chittor.
 
 **Panna Dhai** was Udai Singh's nurse. In the traditional account, she saved his life (see below).
-
-**Asa Shah** was the governor of Kumbhalgarh, who sheltered the young prince.
 
 **Akbar**, the Mughal emperor, besieged Chittorgarh in 1567–68.
 
@@ -70,7 +68,7 @@ Retreat and defeat are not the same thing. Sometimes the bravest-looking choice 
 
 ## My connection
 
-On Day 9 we reached Udaipur around 2 p.m. and checked into Hotel Udaigarh in the old-city area near Lake Pichola. The city immediately felt different to me. Compared with many stretches we had travelled through, I found it cleaner and neater, and it would eventually become my favourite city of the trip. That afternoon we visited Saheliyon Ki Bari and Fateh Sagar Lake. In the evening we went to Gangaur Ghat, with its views across Lake Pichola, and Bagore Ki Haveli.
+On Day 9 we reached Udaipur around 2 p.m. and checked into Hotel Udaigarh in the old-city area near Lake Pichola. The city immediately felt different to me. Compared with many stretches we had travelled through, I found it cleaner and neater, and it would eventually become my favourite city of the trip. In the evening Gangaur Ghat gave us views across Lake Pichola.
 
 On Day 10 our final full day began at the City Palace. It "grew over centuries under the rulers of Mewar", and I was drawn to the craftsmanship throughout: "the kind of work that makes you wonder how much patience and skill went into every surface." Udaipur gave me beauty, comfort, art and a sense of ease. That combination made it my favourite destination of the journey.
 

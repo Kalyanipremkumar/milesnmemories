@@ -20,29 +20,29 @@ The two halves of this story stand on very different ground, though. Pratap's re
 
 ## Where and when
 
-Mewar is the hilly region of southern Rajasthan around Chittorgarh, Kumbhalgarh and Udaipur, ruled for centuries by the Sisodia line. By the 1560s, Akbar was building his empire across north India, and many Rajput rulers had entered into alliances with him. Mewar had not.
+Mewar is the hilly region of southern Rajasthan around Chittorgarh, Kumbhalgarh and Udaipur, ruled for centuries by the Sisodia line. By the 1560s many Rajput rulers had allied with the expanding Mughal empire of Akbar. Mewar had not.
 
-In February 1568, after a siege of about four months, Akbar captured Chittorgarh, the old capital of Mewar. Pratap's father, Maharana Udai Singh II, had already withdrawn into the hills to the west, where he was developing a new capital at Udaipur. Udai Singh died at Gogunda in 1572, and Pratap succeeded him.
+In February 1568, after a siege of about four months, Akbar captured Chittorgarh, the old capital of Mewar. Pratap's father, Maharana Udai Singh II, had already withdrawn into the hills to the west, where he was developing a new capital at Udaipur.
 
-Pratap's birth is usually dated to May 1540 (9 May is the date most often quoted, and his birth anniversary is also celebrated by the Hindu calendar). Encyclopaedia Britannica is more cautious and gives "1545?". Tradition, and Rajasthan Tourism, name Kumbhalgarh Fort as his birthplace.
+Pratap's birth is usually dated to May 1540 (9 May is the date most often quoted). Encyclopaedia Britannica is more cautious and gives "1545?". Tradition, and Rajasthan Tourism, name Kumbhalgarh Fort as his birthplace.
 
 ## The people
 
-**Maharana Pratap** was the eldest son of Udai Singh II and Jaiwanta Bai. Udai Singh had wanted a younger son, Jagmal, to succeed him, but Mewar's nobles placed Pratap on the throne at Gogunda in 1572. Jagmal later went over to Akbar.
+**Maharana Pratap** was the eldest son of Udai Singh II and Jaiwanta Bai. When Udai Singh died in 1572, he had wanted a younger son, Jagmal, to succeed him, but Mewar's nobles placed Pratap on the throne at Gogunda. Jagmal later went over to Akbar.
 
 **Akbar**, the Mughal emperor, first tried diplomacy. Between 1572 and 1573 he sent a series of envoys, among them Jalal Khan, Raja Man Singh of Amber, Raja Bhagwant Das and Todar Mal, to persuade Pratap to accept Mughal overlordship. Pratap refused them all.
 
 **Man Singh I of Amber**, the Kachwaha prince, commanded the Mughal army at Haldighati. So Rajputs fought on both sides of this battle.
 
-Pratap's side was not made up of Rajputs alone either. **Hakim Khan Sur**, an Afghan commander, led his vanguard, and Bhil archers under their chief Punja fought alongside him. Ram Shah Tomar, the former ruler of Gwalior, also joined him with his sons. Later, the Jain merchant-minister **Bhama Shah** is remembered for funding Pratap's continued resistance.
+Pratap's side was not made up of Rajputs alone either. **Hakim Khan Sur**, an Afghan commander, led his vanguard, and Bhil archers under their chief Punja fought alongside him. So did Ram Shah Tomar, the former ruler of Gwalior. Later, the Jain merchant-minister **Bhama Shah** is remembered for funding Pratap's continued resistance.
 
 ## What happened
 
 In June 1576 the two armies met at the Haldighati pass, about 19 kilometres from the fort of Gogunda, north-west of present-day Udaipur. The battle is usually dated to 18 June. Al-Badauni, a Mughal historian who was there, gives 21 June.
 
-The numbers have been argued over ever since. Badauni counted about 3,000 Mewar horsemen and some 400 Bhil archers, against roughly 10,000 Mughal troops. Later Mewar traditions gave far larger figures on both sides, which the historian Jadunath Sarkar considered exaggerated.
+Badauni counted about 3,000 Mewar horsemen and some 400 Bhil archers, against roughly 10,000 Mughal troops. Later Mewar traditions gave far larger figures on both sides, which the historian Jadunath Sarkar considered exaggerated.
 
-The Mughals won. Britannica sums up the result: the Mughals were victorious, but the battle became legendary as a stand by the Rajputs against heavy odds. Pratap escaped into the hills. Tradition holds that a Jhala chieftain put on the royal insignia so that the enemy would chase him instead, and was killed. The Mughals briefly occupied Gogunda.
+The Mughals won, but, as Britannica puts it, the battle became legendary as a Rajput stand against heavy odds. Pratap escaped into the hills. Tradition holds that a Jhala chieftain put on the royal insignia so that the enemy would chase him instead, and was killed. The Mughals briefly occupied Gogunda.
 
 What followed is the real heart of Pratap's reputation. For the next twenty years he fought from the hills, harassing Mughal outposts and urging his people not to cooperate with Akbar's tax collectors. He lost a great deal: Kumbhalgarh itself was taken by Akbar's general Shahbaz Khan in 1578. But from the mid-1580s, while Akbar was occupied in the Punjab, Pratap recovered most of his strongholds. Chittorgarh was never one of them. He held court at Chavand, and died on 19 January 1597. Accounts say his death followed a hunting injury.
 
@@ -50,15 +50,13 @@ His son Amar Singh I finally came to terms with Akbar's son, the emperor Jahangi
 
 ## Legends and debates
 
-**Chetak.** The popular story goes like this. At Haldighati, Chetak reared up against Man Singh's war elephant. Wounded, he then carried Pratap away from the battlefield, leaping a stream or ravine, and died soon afterwards. It is a powerful story, but historians treat it as legend. A study of Rajasthani horse traditions notes that historical sources do not name the horse Pratap rode, or credit it with any unusual feat. The name "Chetak" first appears in an eighteenth-century ballad, the *Khumana Raso*. The version most people know was popularised by James Tod's *Annals and Antiquities of Rajasthan* (1829), which drew on that ballad. Sarkar thought the elephant episode as exaggerated as the troop numbers.
+**Chetak.** The popular story goes like this. At Haldighati, Chetak reared up against Man Singh's war elephant. Wounded, he then carried Pratap away from the battlefield, leaping a stream or ravine, and died soon afterwards. Historians treat it as legend. A study of Rajasthani horse traditions notes that historical sources do not name the horse Pratap rode, or credit it with any unusual feat. The name "Chetak" first appears in an eighteenth-century ballad, the *Khumana Raso*. The version most people know was popularised by James Tod's *Annals and Antiquities of Rajasthan* (1829), which drew on that ballad. Sarkar thought the elephant episode as exaggerated as the troop numbers.
 
 The legend has its own landmark all the same. The Chetak Smarak at Balicha, near Haldighati, is said to mark the spot where the horse died, and the Archaeological Survey of India protects it as a monument.
 
 **Other battlefield stories.** A popular story says that Pratap's estranged younger brother, Shakti Singh, rode after him, killed his pursuers and gave him a fresh horse when Chetak fell. I could not trace this to a contemporary source, so it belongs with the legends.
 
 **Who won?** In recent years some have argued that Pratap actually won at Haldighati, and in 2017 there were moves in Rajasthan to rewrite school textbooks that way. Historians including Rima Hooja have rejected this reading. The contemporary accounts describe a Mughal victory, but one that failed in its main aim, which was to capture Pratap or force his submission.
-
-**Birth date and place.** As noted above, the year (1540 or 1545?) and the exact day vary between sources. Kumbhalgarh as his birthplace rests on long tradition.
 
 ## Wisdom to carry forward
 
@@ -70,7 +68,7 @@ There is a quieter lesson in the sources too. The records remember an Afghan gen
 
 As a child, I listened to my teacher narrate stories about Maharana Pratap's courage and about Chetak, his loyal horse. Those stories stayed with me. Long before I saw Rajasthan on a map, it existed in my imagination as a place of extraordinary courage and character.
 
-On Day 8 of our journey we reached Kumbhalgarh, traditionally recognised as his birthplace. "It is one thing to hear those stories as a child, and another to travel through the region connected to them." The hills and fortifications made the scale of the landscape easier to imagine. I did not record a dramatic moment of emotion there, and I will not invent one. It is enough to say that this was a place linked to a figure I had admired since childhood.
+On Day 8 of our journey we reached Kumbhalgarh, traditionally recognised as his birthplace. "It is one thing to hear those stories as a child, and another to travel through the region connected to them." The hills and fortifications made the scale of the landscape easier to imagine. It is enough to say that this was a place linked to a figure I had admired since childhood.
 
 ## Sources
 

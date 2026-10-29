@@ -523,7 +523,7 @@ for m in STORIES:
 
 if STORIES:
     def chips(label, prefix, key):
-        vals = sorted({t for m in STORIES for t in m.get(key, [])})
+        vals = sorted({t for m in STORIES for t in (m.get(key, []) if key == "subjects" else m.get(key, [])[:2])})  # main tags only, to keep the row short
         return (f'<div class="chip-row"><span>{label}</span>' + "".join(
             f'<button type="button" data-f="{prefix}-{tag_key(v)}">{esc(v)}</button>' for v in vals) + '</div>')
     cr, cr_ld = crumbs([("/", "Home"), (None, "Stories Behind the Stones")])
