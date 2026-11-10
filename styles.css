@@ -528,3 +528,8 @@ dialog.mh-search::backdrop { background: rgb(24 43 84 / .45); }
 .contact-close { max-width: 40ch; margin: clamp(36px, 5vw, 56px) auto 0; padding: 0 var(--gutter); text-align: center;
   font-family: var(--text); font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.35rem); line-height: 1.6; color: var(--indigo-soft); }
 .contact-close::before { content: ""; display: block; width: 48px; height: 1px; background: #C38A24; margin: 0 auto 18px; }
+
+/* Believe it or not */
+.believe { margin: 2.2rem 0; padding: 22px 24px 8px; border: 1px solid var(--rule); border-left: 4px solid #A43B2D; background: rgb(195 138 36 / .08); }
+.believe-kicker { margin: 0 0 4px; font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; color: #A43B2D; font-weight: 600; }
+.believe h3 { margin-top: 0; }
